@@ -1,0 +1,141 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:macro name="ur3_gripper" params="prefix parent *origin">
+    <!-- Gripper base joint -->
+    <joint name="${prefix}gripper_base_joint" type="fixed">
+      <parent link="${parent}"/>
+      <child link="${prefix}gripper_base_link"/>
+      <xacro:insert_block name="origin"/>
+    </joint>
+
+    <!-- Gripper base link -->
+    <link name="${prefix}gripper_base_link">
+      <inertial>
+        <mass value="0.2"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+      </inertial>
+      <visual>
+        <geometry>
+          <box size="0.02 0.05 0.02"/>
+        </geometry>
+        <material name="blue">
+          <color rgba="0.0 0.0 0.8 1.0"/>
+        </material>
+      </visual>
+      <collision>
+        <geometry>
+          <box size="0.02 0.05 0.02"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <!-- Gripper finger joint - prismatic for simple opening/closing -->
+    <joint name="${prefix}gripper_finger_joint" type="prismatic">
+      <parent link="${prefix}gripper_base_link"/>
+      <child link="${prefix}gripper_finger_link"/>
+      <origin xyz="0 0 0.01" rpy="0 0 0"/>
+      <axis xyz="0 1 0"/>
+      <limit effort="50" lower="0" upper="0.04" velocity="0.1"/>
+      <dynamics damping="1.0" friction="1.0"/>
+    </joint>
+
+    <!-- Gripper finger link -->
+    <link name="${prefix}gripper_finger_link">
+      <inertial>
+        <mass value="0.1"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <inertia ixx="0.0001" ixy="0" ixz="0" iyy="0.0001" iyz="0" izz="0.0001"/>
+      </inertial>
+      <visual>
+        <geometry>
+          <box size="0.02 0.01 0.05"/>
+        </geometry>
+        <material name="grey">
+          <color rgba="0.5 0.5 0.5 1.0"/>
+        </material>
+      </visual>
+      <collision>
+        <geometry>
+          <box size="0.02 0.01 0.05"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <!-- Second finger for parallel gripper -->
+    <joint name="${prefix}gripper_finger2_joint" type="prismatic">
+      <parent link="${prefix}gripper_base_link"/>
+      <child link="${prefix}gripper_finger2_link"/>
+      <origin xyz="0 0 0.01" rpy="0 0 0"/>
+      <axis xyz="0 -1 0"/>
+      <limit effort="50" lower="0" upper="0.04" velocity="0.1"/>
+      <dynamics damping="1.0" friction="1.0"/>
+      <mimic joint="${prefix}gripper_finger_joint" multiplier="1" offset="0"/>
+    </joint>
+
+    <!-- Second gripper finger link -->
+    <link name="${prefix}gripper_finger2_link">
+      <inertial>
+        <mass value="0.1"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <inertia ixx="0.0001" ixy="0" ixz="0" iyy="0.0001" iyz="0" izz="0.0001"/>
+      </inertial>
+      <visual>
+        <geometry>
+          <box size="0.02 0.01 0.05"/>
+        </geometry>
+        <material name="grey">
+          <color rgba="0.5 0.5 0.5 1.0"/>
+        </material>
+      </visual>
+      <collision>
+        <geometry>
+          <box size="0.02 0.01 0.05"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <!-- Gazebo-specific elements -->
+    <gazebo reference="${prefix}gripper_base_link">
+      <material>Gazebo/Blue</material>
+    </gazebo>
+
+    <gazebo reference="${prefix}gripper_finger_link">
+      <material>Gazebo/Grey</material>
+      <mu1>1.0</mu1>
+      <mu2>1.0</mu2>
+      <kp>1000000.0</kp>
+      <kd>1.0</kd>
+      <minDepth>0.001</minDepth>
+    </gazebo>
+
+    <gazebo reference="${prefix}gripper_finger2_link">
+      <material>Gazebo/Grey</material>
+      <mu1>1.0</mu1>
+      <mu2>1.0</mu2>
+      <kp>1000000.0</kp>
+      <kd>1.0</kd>
+      <minDepth>0.001</minDepth>
+    </gazebo>
+
+    <!-- Transmission for the gripper -->
+    <transmission name="${prefix}gripper_trans">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="${prefix}gripper_finger_joint">
+        <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="${prefix}gripper_motor">
+        <mechanicalReduction>1</mechanicalReduction>
+        <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      </actuator>
+    </transmission>
+
+    <!-- Mimic joint is handled through the joint definition with the mimic tag -->
+    <!-- We don't need a plugin since we're using the built-in mimic functionality -->
+    <gazebo>
+      <!-- Using built-in mimic joint functionality instead of plugin -->
+    </gazebo>
+
+  </xacro:macro>
+</robot>

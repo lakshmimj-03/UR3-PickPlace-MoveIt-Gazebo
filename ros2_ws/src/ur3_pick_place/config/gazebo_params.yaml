@@ -1,0 +1,75 @@
+gazebo:
+  ros__parameters:
+    publish_rate: 100.0
+    use_sim_time: true
+
+gazebo_ros2_control:
+  ros__parameters:
+    use_sim_time: true
+
+controller_manager:
+  ros__parameters:
+    use_sim_time: true
+    update_rate: 100  # Hz
+
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+    arm_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+      joints:
+        - shoulder_pan_joint
+        - shoulder_lift_joint
+        - elbow_joint
+        - wrist_1_joint
+        - wrist_2_joint
+        - wrist_3_joint
+      command_interfaces:
+        - position
+      state_interfaces:
+        - position
+        - velocity
+      gains:
+        shoulder_pan_joint:
+          p: 1000.0
+          d: 50.0
+          i: 0.0
+          i_clamp: 0.0
+        shoulder_lift_joint:
+          p: 3000.0
+          d: 50.0
+          i: 0.0
+          i_clamp: 0.0
+        elbow_joint:
+          p: 2000.0
+          d: 20.0
+          i: 0.0
+          i_clamp: 0.0
+        wrist_1_joint:
+          p: 500.0
+          d: 10.0
+          i: 0.0
+          i_clamp: 0.0
+        wrist_2_joint:
+          p: 500.0
+          d: 10.0
+          i: 0.0
+          i_clamp: 0.0
+        wrist_3_joint:
+          p: 100.0
+          d: 10.0
+          i: 0.0
+          i_clamp: 0.0
+
+    gripper_controller:
+      type: position_controllers/GripperActionController
+      joint: gripper_finger_joint
+      action_monitor_rate: 20
+      goal_tolerance: 0.01
+      max_effort: 50.0
+      gains:
+        gripper_finger_joint:
+          p: 100.0
+          d: 10.0
+          i: 0.0
+          i_clamp: 0.0

@@ -1,0 +1,10 @@
+setup.py
+ur3_pick_place/__init__.py
+ur3_pick_place/pick_place_node.py
+ur3_pick_place/spawn_objects.py
+ur3_pick_place.egg-info/PKG-INFO
+ur3_pick_place.egg-info/SOURCES.txt
+ur3_pick_place.egg-info/dependency_links.txt
+ur3_pick_place.egg-info/top_level.txt
+ur3_pick_place/nodes/__init__.py
+ur3_pick_place/nodes/pick_place_node.py

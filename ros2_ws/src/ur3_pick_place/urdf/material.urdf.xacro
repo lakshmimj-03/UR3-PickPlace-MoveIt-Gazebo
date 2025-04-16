@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://wiki.ros.org/xacro">
+  <!-- Universal Robot Colors -->
+  <material name="ur_base">
+    <color rgba="0.7 0.7 0.7 1.0"/>
+  </material>
+  
+  <material name="ur_shoulder">
+    <color rgba="0.7 0.7 0.7 1.0"/>
+  </material>
+  
+  <material name="ur_upperarm">
+    <color rgba="0.7 0.7 0.7 1.0"/>
+  </material>
+  
+  <material name="ur_forearm">
+    <color rgba="0.7 0.7 0.7 1.0"/>
+  </material>
+  
+  <material name="ur_wrist1">
+    <color rgba="0.7 0.7 0.7 1.0"/>
+  </material>
+  
+  <material name="ur_wrist2">
+    <color rgba="0.7 0.7 0.7 1.0"/>
+  </material>
+  
+  <material name="ur_wrist3">
+    <color rgba="0.7 0.7 0.7 1.0"/>
+  </material>
+  
+  <material name="ur_joint_blue">
+    <color rgba="0.0 0.5 0.8 1.0"/>
+  </material>
+</robot>

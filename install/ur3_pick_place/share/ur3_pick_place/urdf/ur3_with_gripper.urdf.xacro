@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://wiki.ros.org/xacro" name="ur3_with_gripper">
+    <!-- Parameters passed to included xacro files -->
+    <xacro:arg name="name" default="ur3"/>
+    <xacro:arg name="ur_type" default="ur3"/>
+    <xacro:arg name="tf_prefix" default=""/>
+    <xacro:arg name="prefix" default=""/>
+    <xacro:arg name="joint_limit_params" default="$(find ur_description)/config/ur3/joint_limits.yaml"/>
+    <xacro:arg name="kinematics_params" default="$(find ur_description)/config/ur3/default_kinematics.yaml"/>
+    <xacro:arg name="physical_params" default="$(find ur_description)/config/ur3/physical_parameters.yaml"/>
+    <xacro:arg name="visual_params" default="$(find ur_description)/config/ur3/visual_parameters.yaml"/>
+    <!-- transmission_hw_interface is no longer needed for ROS 2 UR driver -->
+    <xacro:arg name="safety_limits" default="false"/>
+    <xacro:arg name="safety_pos_margin" default="0.15"/>
+    <xacro:arg name="safety_k_position" default="20"/>
+    <!-- initial_positions_file is no longer used in the ROS 2 UR driver -->
+    <xacro:arg name="sim_gazebo" default="false"/>
+    <xacro:arg name="simulation_controllers" default=""/>
+
+    <!-- Import main UR macro -->
+    <xacro:include filename="$(find ur_description)/urdf/ur_macro.xacro"/>
+
+    <!-- Import gripper -->
+    <xacro:include filename="$(find ur3_pick_place)/urdf/gripper.urdf.xacro"/>
+
+    <!-- UR3 robot -->
+    <xacro:ur_robot
+        name="$(arg name)"
+        tf_prefix="$(arg tf_prefix)"
+        parent="world"
+        joint_limits_parameters_file="$(arg joint_limit_params)"
+        kinematics_parameters_file="$(arg kinematics_params)"
+        physical_parameters_file="$(arg physical_params)"
+        visual_parameters_file="$(arg visual_params)"
+        safety_limits="$(arg safety_limits)"
+        safety_pos_margin="$(arg safety_pos_margin)"
+        safety_k_position="$(arg safety_k_position)">
+        <origin xyz="0 0 0" rpy="0 0 0" />
+    </xacro:ur_robot>
+
+    <!-- Add gripper -->
+    <xacro:ur3_gripper prefix="" parent="tool0">
+        <origin xyz="0 0 0.01" rpy="0 0 0"/>
+    </xacro:ur3_gripper>
+
+    <!-- ROS2 Control plugin for Gazebo -->
+    <xacro:if value="$(arg sim_gazebo)">
+        <!-- Using ros_gz_sim instead of gazebo_ros2_control since it's not available -->
+        <gazebo>
+            <!-- We'll use ros_gz_sim for control instead -->
+            <!-- The controller configuration will be handled by the parameter_bridge -->
+        </gazebo>
+
+        <!-- Make sure all links are visible in Gazebo -->
+        <gazebo reference="base_link">
+            <material>Gazebo/Grey</material>
+        </gazebo>
+        <gazebo reference="shoulder_link">
+            <material>Gazebo/Grey</material>
+        </gazebo>
+        <gazebo reference="upper_arm_link">
+            <material>Gazebo/Grey</material>
+        </gazebo>
+        <gazebo reference="forearm_link">
+            <material>Gazebo/Grey</material>
+        </gazebo>
+        <gazebo reference="wrist_1_link">
+            <material>Gazebo/Grey</material>
+        </gazebo>
+        <gazebo reference="wrist_2_link">
+            <material>Gazebo/Grey</material>
+        </gazebo>
+        <gazebo reference="wrist_3_link">
+            <material>Gazebo/Grey</material>
+        </gazebo>
+    </xacro:if>
+
+    <!-- World link -->
+    <link name="world"/>
+    <joint name="world_joint" type="fixed">
+        <parent link="world"/>
+        <child link="base_link"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+    </joint>
+</robot>

@@ -1,0 +1,638 @@
+[0.000000] (-) TimerEvent: {}
+[0.002176] (-) JobUnselected: {'identifier': 'ur'}
+[0.002790] (-) JobUnselected: {'identifier': 'ur_calibration'}
+[0.003217] (-) JobUnselected: {'identifier': 'ur_controllers'}
+[0.003921] (-) JobUnselected: {'identifier': 'ur_dashboard_msgs'}
+[0.004188] (-) JobUnselected: {'identifier': 'ur_description'}
+[0.004633] (-) JobUnselected: {'identifier': 'ur_moveit_config'}
+[0.005480] (-) JobUnselected: {'identifier': 'ur_robot_driver'}
+[0.005711] (ur3_pick_place) JobQueued: {'identifier': 'ur3_pick_place', 'dependencies': OrderedDict({'ur_description': '/home/lachu/ros2_workspaces/install/ur_description', 'ur_moveit_config': '/home/lachu/ros2_workspaces/install/ur_moveit_config'})}
+[0.005826] (ur3_pick_place) JobStarted: {'identifier': 'ur3_pick_place'}
+[0.098680] (-) TimerEvent: {}
+[0.199978] (-) TimerEvent: {}
+[0.300693] (-) TimerEvent: {}
+[0.308105] (ur3_pick_place) JobProgress: {'identifier': 'ur3_pick_place', 'progress': 'cmake'}
+[0.311098] (ur3_pick_place) JobProgress: {'identifier': 'ur3_pick_place', 'progress': 'build'}
+[0.314358] (ur3_pick_place) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/lachu/ros2_workspaces/build/ur3_pick_place', '--', '-j16', '-l16'], 'cwd': '/home/lachu/ros2_workspaces/build/ur3_pick_place', 'env': OrderedDict({'GJS_DEBUG_TOPICS': 'JS ERROR;JS LOG', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'GZ_SIM_RESOURCE_PATH': '/usr/share/gz/gz-sim/models:/usr/share/gz/gz-sim/models::/home/lachu/ur3_ws/src/ur3_pick_place/worlds:/home/lachu/ur3_ws/src/ur3_pick_place/worlds:/home/lachu/ur3_ws/src/ur3_pick_place/worlds:/home/lachu/ur3_ws/src/ur3_pick_place/worlds', 'USER': 'lachu', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'XDG_SESSION_TYPE': 'x11', 'GIT_ASKPASS': '/usr/share/code-insiders/resources/app/extensions/git/dist/askpass.sh', 'SHLVL': '1', 'LIBGL_ALWAYS_SOFTWARE': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'LESS': '-FX', 'HOME': '/home/lachu', 'CHROME_DESKTOP': 'code-insiders.desktop', 'OLDPWD': '/home/lachu/ros2_workspaces', 'TERM_PROGRAM_VERSION': '1.100.0-insider', 'DESKTOP_SESSION': 'ubuntu', 'GIO_LAUNCHED_DESKTOP_FILE': '/usr/share/applications/code-insiders.desktop', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'PAGER': 'cat', 'VSCODE_GIT_ASKPASS_MAIN': '/usr/share/code-insiders/resources/app/extensions/git/dist/askpass-main.js', 'VSCODE_GIT_ASKPASS_NODE': '/usr/share/code-insiders/code-insiders', 'MANAGERPID': '2177', 'SYSTEMD_EXEC_PID': '2574', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'GIO_LAUNCHED_DESKTOP_FILE_PID': '27190', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'COLCON_PREFIX_PATH': '/home/lachu/ros2_workspaces/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'lachu', 'JOURNAL_STREAM': '9:24007', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.Shell@x11.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'lachu', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'WINDOWPATH': '2', 'PATH': '/home/lachu/.local/bin:/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/home/lachu/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/lachu/.config/Code - Insiders/User/globalStorage/github.copilot-chat/debugCommand', 'SESSION_MANAGER': 'local/lachu-Vivobook-ASUSLaptop-K3605VC-K3605VC:@/tmp/.ICE-unix/2528,unix/lachu-Vivobook-ASUSLaptop-K3605VC-K3605VC:/tmp/.ICE-unix/2528', 'INVOCATION_ID': '416a8d7ba164470689a2c8635836e465', 'XDG_MENU_PREFIX': 'gnome-', 'XDG_RUNTIME_DIR': '/run/user/1000', 'GDK_BACKEND': 'x11', 'DISPLAY': ':1', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'Unity', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/gdm/Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'SBX_CHROME_API_RQ': '1', 'VSCODE_GIT_IPC_HANDLE': '/run/user/1000/vscode-git-bca2fc37cc.sock', 'TERM_PROGRAM': 'vscode', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/lachu/ros2_workspaces/install/ur3_pick_place:/opt/ros/jazzy', 'ORIGINAL_XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'GJS_DEBUG_OUTPUT': 'stderr', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'VSCODE_GIT_ASKPASS_EXTRA_ARGS': '', 'GIT_PAGER': 'cat', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/lachu/ros2_workspaces/build/ur3_pick_place', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'QTWEBENGINE_DICTIONARIES_PATH': '/usr/share/hunspell-bdic/', 'PYTHONPATH': '/home/lachu/ros2_workspaces/install/ur3_pick_place/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'CMAKE_PREFIX_PATH': '/home/lachu/ros2_workspaces/install/ur3_pick_place:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[0.400900] (-) TimerEvent: {}
+[0.502459] (-) TimerEvent: {}
+[0.582500] (ur3_pick_place) StdoutLine: {'line': b'[  0%] Built target ament_cmake_python_copy_ur3_pick_place\n'}
+[0.602705] (-) TimerEvent: {}
+[0.622870] (ur3_pick_place) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/pick_place_node.dir/src/pick_place_node.cpp.o\x1b[0m\n'}
+[0.702834] (-) TimerEvent: {}
+[0.803431] (-) TimerEvent: {}
+[0.904184] (-) TimerEvent: {}
+[1.004960] (-) TimerEvent: {}
+[1.105637] (-) TimerEvent: {}
+[1.206331] (-) TimerEvent: {}
+[1.285169] (ur3_pick_place) StdoutLine: {'line': b'running egg_info\n'}
+[1.306480] (-) TimerEvent: {}
+[1.311431] (ur3_pick_place) StdoutLine: {'line': b'writing ur3_pick_place.egg-info/PKG-INFO\n'}
+[1.311979] (ur3_pick_place) StdoutLine: {'line': b'writing dependency_links to ur3_pick_place.egg-info/dependency_links.txt\n'}
+[1.312526] (ur3_pick_place) StdoutLine: {'line': b'writing top-level names to ur3_pick_place.egg-info/top_level.txt\n'}
+[1.390533] (ur3_pick_place) StdoutLine: {'line': b"reading manifest file 'ur3_pick_place.egg-info/SOURCES.txt'\n"}
+[1.391907] (ur3_pick_place) StdoutLine: {'line': b"writing manifest file 'ur3_pick_place.egg-info/SOURCES.txt'\n"}
+[1.406721] (-) TimerEvent: {}
+[1.462101] (ur3_pick_place) StdoutLine: {'line': b'[ 50%] Built target ament_cmake_python_build_ur3_pick_place_egg\n'}
+[1.506957] (-) TimerEvent: {}
+[1.608583] (-) TimerEvent: {}
+[1.709473] (-) TimerEvent: {}
+[1.810619] (-) TimerEvent: {}
+[1.911390] (-) TimerEvent: {}
+[2.012036] (-) TimerEvent: {}
+[2.112554] (-) TimerEvent: {}
+[2.213020] (-) TimerEvent: {}
+[2.314101] (-) TimerEvent: {}
+[2.415104] (-) TimerEvent: {}
+[2.516066] (-) TimerEvent: {}
+[2.616938] (-) TimerEvent: {}
+[2.718031] (-) TimerEvent: {}
+[2.818936] (-) TimerEvent: {}
+[2.919726] (-) TimerEvent: {}
+[3.020562] (-) TimerEvent: {}
+[3.121460] (-) TimerEvent: {}
+[3.222062] (-) TimerEvent: {}
+[3.322616] (-) TimerEvent: {}
+[3.423048] (-) TimerEvent: {}
+[3.523464] (-) TimerEvent: {}
+[3.624205] (-) TimerEvent: {}
+[3.725023] (-) TimerEvent: {}
+[3.826004] (-) TimerEvent: {}
+[3.926852] (-) TimerEvent: {}
+[4.027351] (-) TimerEvent: {}
+[4.127792] (-) TimerEvent: {}
+[4.228385] (-) TimerEvent: {}
+[4.328827] (-) TimerEvent: {}
+[4.429367] (-) TimerEvent: {}
+[4.529826] (-) TimerEvent: {}
+[4.630271] (-) TimerEvent: {}
+[4.730789] (-) TimerEvent: {}
+[4.831620] (-) TimerEvent: {}
+[4.932442] (-) TimerEvent: {}
+[5.033487] (-) TimerEvent: {}
+[5.134430] (-) TimerEvent: {}
+[5.235508] (-) TimerEvent: {}
+[5.336420] (-) TimerEvent: {}
+[5.436993] (-) TimerEvent: {}
+[5.537556] (-) TimerEvent: {}
+[5.638082] (-) TimerEvent: {}
+[5.738705] (-) TimerEvent: {}
+[5.839393] (-) TimerEvent: {}
+[5.940115] (-) TimerEvent: {}
+[6.040600] (-) TimerEvent: {}
+[6.141380] (-) TimerEvent: {}
+[6.242335] (-) TimerEvent: {}
+[6.343227] (-) TimerEvent: {}
+[6.443962] (-) TimerEvent: {}
+[6.544311] (-) TimerEvent: {}
+[6.644751] (-) TimerEvent: {}
+[6.745591] (-) TimerEvent: {}
+[6.846314] (-) TimerEvent: {}
+[6.947175] (-) TimerEvent: {}
+[7.047682] (-) TimerEvent: {}
+[7.148272] (-) TimerEvent: {}
+[7.249259] (-) TimerEvent: {}
+[7.350174] (-) TimerEvent: {}
+[7.451183] (-) TimerEvent: {}
+[7.551839] (-) TimerEvent: {}
+[7.652239] (-) TimerEvent: {}
+[7.752627] (-) TimerEvent: {}
+[7.853404] (-) TimerEvent: {}
+[7.954004] (-) TimerEvent: {}
+[8.054839] (-) TimerEvent: {}
+[8.155985] (-) TimerEvent: {}
+[8.256947] (-) TimerEvent: {}
+[8.357918] (-) TimerEvent: {}
+[8.458762] (-) TimerEvent: {}
+[8.559383] (-) TimerEvent: {}
+[8.659918] (-) TimerEvent: {}
+[8.760301] (-) TimerEvent: {}
+[8.860677] (-) TimerEvent: {}
+[8.961089] (-) TimerEvent: {}
+[9.061496] (-) TimerEvent: {}
+[9.162392] (-) TimerEvent: {}
+[9.263172] (-) TimerEvent: {}
+[9.363946] (-) TimerEvent: {}
+[9.464794] (-) TimerEvent: {}
+[9.565539] (-) TimerEvent: {}
+[9.666198] (-) TimerEvent: {}
+[9.766709] (-) TimerEvent: {}
+[9.867402] (-) TimerEvent: {}
+[9.968045] (-) TimerEvent: {}
+[10.068501] (-) TimerEvent: {}
+[10.168874] (-) TimerEvent: {}
+[10.269198] (-) TimerEvent: {}
+[10.369695] (-) TimerEvent: {}
+[10.470706] (-) TimerEvent: {}
+[10.571364] (-) TimerEvent: {}
+[10.671757] (-) TimerEvent: {}
+[10.772176] (-) TimerEvent: {}
+[10.872943] (-) TimerEvent: {}
+[10.973618] (-) TimerEvent: {}
+[11.074346] (-) TimerEvent: {}
+[11.174974] (-) TimerEvent: {}
+[11.275950] (-) TimerEvent: {}
+[11.377078] (-) TimerEvent: {}
+[11.477978] (-) TimerEvent: {}
+[11.578598] (-) TimerEvent: {}
+[11.679377] (-) TimerEvent: {}
+[11.780106] (-) TimerEvent: {}
+[11.880853] (-) TimerEvent: {}
+[11.981485] (-) TimerEvent: {}
+[12.082448] (-) TimerEvent: {}
+[12.183750] (-) TimerEvent: {}
+[12.284808] (-) TimerEvent: {}
+[12.385863] (-) TimerEvent: {}
+[12.486742] (-) TimerEvent: {}
+[12.587578] (-) TimerEvent: {}
+[12.688450] (-) TimerEvent: {}
+[12.789218] (-) TimerEvent: {}
+[12.890071] (-) TimerEvent: {}
+[12.991218] (-) TimerEvent: {}
+[13.092104] (-) TimerEvent: {}
+[13.192958] (-) TimerEvent: {}
+[13.293339] (-) TimerEvent: {}
+[13.393815] (-) TimerEvent: {}
+[13.494249] (-) TimerEvent: {}
+[13.594720] (-) TimerEvent: {}
+[13.695222] (-) TimerEvent: {}
+[13.795771] (-) TimerEvent: {}
+[13.896602] (-) TimerEvent: {}
+[13.997322] (-) TimerEvent: {}
+[14.097876] (-) TimerEvent: {}
+[14.198632] (-) TimerEvent: {}
+[14.299375] (-) TimerEvent: {}
+[14.400580] (-) TimerEvent: {}
+[14.502441] (-) TimerEvent: {}
+[14.603100] (-) TimerEvent: {}
+[14.703620] (-) TimerEvent: {}
+[14.804484] (-) TimerEvent: {}
+[14.905389] (-) TimerEvent: {}
+[15.006376] (-) TimerEvent: {}
+[15.107086] (-) TimerEvent: {}
+[15.208139] (-) TimerEvent: {}
+[15.309093] (-) TimerEvent: {}
+[15.410318] (-) TimerEvent: {}
+[15.511154] (-) TimerEvent: {}
+[15.612079] (-) TimerEvent: {}
+[15.712960] (-) TimerEvent: {}
+[15.813667] (-) TimerEvent: {}
+[15.914394] (-) TimerEvent: {}
+[16.014889] (-) TimerEvent: {}
+[16.115435] (-) TimerEvent: {}
+[16.216456] (-) TimerEvent: {}
+[16.317352] (-) TimerEvent: {}
+[16.418263] (-) TimerEvent: {}
+[16.519277] (-) TimerEvent: {}
+[16.620362] (-) TimerEvent: {}
+[16.721000] (-) TimerEvent: {}
+[16.821549] (-) TimerEvent: {}
+[16.922392] (-) TimerEvent: {}
+[17.023329] (-) TimerEvent: {}
+[17.124058] (-) TimerEvent: {}
+[17.225100] (-) TimerEvent: {}
+[17.326021] (-) TimerEvent: {}
+[17.426805] (-) TimerEvent: {}
+[17.527413] (-) TimerEvent: {}
+[17.627914] (-) TimerEvent: {}
+[17.728350] (-) TimerEvent: {}
+[17.829077] (-) TimerEvent: {}
+[17.929862] (-) TimerEvent: {}
+[18.030241] (-) TimerEvent: {}
+[18.130992] (-) TimerEvent: {}
+[18.231845] (-) TimerEvent: {}
+[18.332850] (-) TimerEvent: {}
+[18.433971] (-) TimerEvent: {}
+[18.534768] (-) TimerEvent: {}
+[18.635370] (-) TimerEvent: {}
+[18.735718] (-) TimerEvent: {}
+[18.836197] (-) TimerEvent: {}
+[18.937007] (-) TimerEvent: {}
+[19.037836] (-) TimerEvent: {}
+[19.138694] (-) TimerEvent: {}
+[19.239632] (-) TimerEvent: {}
+[19.340399] (-) TimerEvent: {}
+[19.441227] (-) TimerEvent: {}
+[19.542331] (-) TimerEvent: {}
+[19.643690] (-) TimerEvent: {}
+[19.744662] (-) TimerEvent: {}
+[19.845347] (-) TimerEvent: {}
+[19.945922] (-) TimerEvent: {}
+[20.046698] (-) TimerEvent: {}
+[20.147362] (-) TimerEvent: {}
+[20.247796] (-) TimerEvent: {}
+[20.348697] (-) TimerEvent: {}
+[20.449680] (-) TimerEvent: {}
+[20.550653] (-) TimerEvent: {}
+[20.651460] (-) TimerEvent: {}
+[20.752234] (-) TimerEvent: {}
+[20.852982] (-) TimerEvent: {}
+[20.953792] (-) TimerEvent: {}
+[21.054593] (-) TimerEvent: {}
+[21.155488] (-) TimerEvent: {}
+[21.256364] (-) TimerEvent: {}
+[21.357240] (-) TimerEvent: {}
+[21.458266] (-) TimerEvent: {}
+[21.559194] (-) TimerEvent: {}
+[21.659906] (-) TimerEvent: {}
+[21.760269] (-) TimerEvent: {}
+[21.860593] (-) TimerEvent: {}
+[21.961007] (-) TimerEvent: {}
+[22.061345] (-) TimerEvent: {}
+[22.161792] (-) TimerEvent: {}
+[22.263034] (-) TimerEvent: {}
+[22.363877] (-) TimerEvent: {}
+[22.464665] (-) TimerEvent: {}
+[22.565460] (-) TimerEvent: {}
+[22.666226] (-) TimerEvent: {}
+[22.767135] (-) TimerEvent: {}
+[22.868051] (-) TimerEvent: {}
+[22.968846] (-) TimerEvent: {}
+[23.069430] (-) TimerEvent: {}
+[23.170006] (-) TimerEvent: {}
+[23.270825] (-) TimerEvent: {}
+[23.371552] (-) TimerEvent: {}
+[23.472402] (-) TimerEvent: {}
+[23.573139] (-) TimerEvent: {}
+[23.674197] (-) TimerEvent: {}
+[23.775041] (-) TimerEvent: {}
+[23.876015] (-) TimerEvent: {}
+[23.977353] (-) TimerEvent: {}
+[24.079386] (-) TimerEvent: {}
+[24.179833] (-) TimerEvent: {}
+[24.280238] (-) TimerEvent: {}
+[24.380681] (-) TimerEvent: {}
+[24.481136] (-) TimerEvent: {}
+[24.581646] (-) TimerEvent: {}
+[24.682561] (-) TimerEvent: {}
+[24.783345] (-) TimerEvent: {}
+[24.884194] (-) TimerEvent: {}
+[24.985174] (-) TimerEvent: {}
+[25.086046] (-) TimerEvent: {}
+[25.187031] (-) TimerEvent: {}
+[25.287994] (-) TimerEvent: {}
+[25.388554] (-) TimerEvent: {}
+[25.489095] (-) TimerEvent: {}
+[25.589970] (-) TimerEvent: {}
+[25.691159] (-) TimerEvent: {}
+[25.792274] (-) TimerEvent: {}
+[25.893413] (-) TimerEvent: {}
+[25.994476] (-) TimerEvent: {}
+[26.095372] (-) TimerEvent: {}
+[26.196164] (-) TimerEvent: {}
+[26.297277] (-) TimerEvent: {}
+[26.398197] (-) TimerEvent: {}
+[26.499210] (-) TimerEvent: {}
+[26.600031] (-) TimerEvent: {}
+[26.700853] (-) TimerEvent: {}
+[26.801385] (-) TimerEvent: {}
+[26.901854] (-) TimerEvent: {}
+[27.002351] (-) TimerEvent: {}
+[27.102925] (-) TimerEvent: {}
+[27.203440] (-) TimerEvent: {}
+[27.303800] (-) TimerEvent: {}
+[27.404196] (-) TimerEvent: {}
+[27.504754] (-) TimerEvent: {}
+[27.605082] (-) TimerEvent: {}
+[27.705342] (-) TimerEvent: {}
+[27.805633] (-) TimerEvent: {}
+[27.905940] (-) TimerEvent: {}
+[28.006277] (-) TimerEvent: {}
+[28.106791] (-) TimerEvent: {}
+[28.207796] (-) TimerEvent: {}
+[28.308869] (-) TimerEvent: {}
+[28.409778] (-) TimerEvent: {}
+[28.510760] (-) TimerEvent: {}
+[28.611483] (-) TimerEvent: {}
+[28.712039] (-) TimerEvent: {}
+[28.812733] (-) TimerEvent: {}
+[28.913990] (-) TimerEvent: {}
+[29.014803] (-) TimerEvent: {}
+[29.115477] (-) TimerEvent: {}
+[29.216501] (-) TimerEvent: {}
+[29.317324] (-) TimerEvent: {}
+[29.418415] (-) TimerEvent: {}
+[29.519393] (-) TimerEvent: {}
+[29.620348] (-) TimerEvent: {}
+[29.721132] (-) TimerEvent: {}
+[29.821774] (-) TimerEvent: {}
+[29.922547] (-) TimerEvent: {}
+[30.023052] (-) TimerEvent: {}
+[30.123962] (-) TimerEvent: {}
+[30.224803] (-) TimerEvent: {}
+[30.326107] (-) TimerEvent: {}
+[30.426933] (-) TimerEvent: {}
+[30.527436] (-) TimerEvent: {}
+[30.628081] (-) TimerEvent: {}
+[30.728894] (-) TimerEvent: {}
+[30.829656] (-) TimerEvent: {}
+[30.930161] (-) TimerEvent: {}
+[31.030613] (-) TimerEvent: {}
+[31.131242] (-) TimerEvent: {}
+[31.231949] (-) TimerEvent: {}
+[31.332927] (-) TimerEvent: {}
+[31.434021] (-) TimerEvent: {}
+[31.534547] (-) TimerEvent: {}
+[31.634944] (-) TimerEvent: {}
+[31.735291] (-) TimerEvent: {}
+[31.835640] (-) TimerEvent: {}
+[31.935988] (-) TimerEvent: {}
+[32.036332] (-) TimerEvent: {}
+[32.136933] (-) TimerEvent: {}
+[32.237610] (-) TimerEvent: {}
+[32.338733] (-) TimerEvent: {}
+[32.439508] (-) TimerEvent: {}
+[32.540029] (-) TimerEvent: {}
+[32.640709] (-) TimerEvent: {}
+[32.741171] (-) TimerEvent: {}
+[32.841765] (-) TimerEvent: {}
+[32.942434] (-) TimerEvent: {}
+[33.043002] (-) TimerEvent: {}
+[33.143478] (-) TimerEvent: {}
+[33.244030] (-) TimerEvent: {}
+[33.345117] (-) TimerEvent: {}
+[33.445940] (-) TimerEvent: {}
+[33.546808] (-) TimerEvent: {}
+[33.647828] (-) TimerEvent: {}
+[33.748473] (-) TimerEvent: {}
+[33.849265] (-) TimerEvent: {}
+[33.950076] (-) TimerEvent: {}
+[34.050911] (-) TimerEvent: {}
+[34.151784] (-) TimerEvent: {}
+[34.252707] (-) TimerEvent: {}
+[34.353381] (-) TimerEvent: {}
+[34.453895] (-) TimerEvent: {}
+[34.554334] (-) TimerEvent: {}
+[34.654961] (-) TimerEvent: {}
+[34.755552] (-) TimerEvent: {}
+[34.856178] (-) TimerEvent: {}
+[34.957000] (-) TimerEvent: {}
+[35.057809] (-) TimerEvent: {}
+[35.158376] (-) TimerEvent: {}
+[35.258821] (-) TimerEvent: {}
+[35.359504] (-) TimerEvent: {}
+[35.460175] (-) TimerEvent: {}
+[35.560901] (-) TimerEvent: {}
+[35.661893] (-) TimerEvent: {}
+[35.762599] (-) TimerEvent: {}
+[35.863329] (-) TimerEvent: {}
+[35.964056] (-) TimerEvent: {}
+[36.064981] (-) TimerEvent: {}
+[36.165966] (-) TimerEvent: {}
+[36.266885] (-) TimerEvent: {}
+[36.367779] (-) TimerEvent: {}
+[36.468240] (-) TimerEvent: {}
+[36.568777] (-) TimerEvent: {}
+[36.669219] (-) TimerEvent: {}
+[36.769846] (-) TimerEvent: {}
+[36.870615] (-) TimerEvent: {}
+[36.971357] (-) TimerEvent: {}
+[37.072068] (-) TimerEvent: {}
+[37.172974] (-) TimerEvent: {}
+[37.274118] (-) TimerEvent: {}
+[37.375061] (-) TimerEvent: {}
+[37.475925] (-) TimerEvent: {}
+[37.576779] (-) TimerEvent: {}
+[37.677160] (-) TimerEvent: {}
+[37.777704] (-) TimerEvent: {}
+[37.878352] (-) TimerEvent: {}
+[37.978955] (-) TimerEvent: {}
+[38.079580] (-) TimerEvent: {}
+[38.180264] (-) TimerEvent: {}
+[38.281047] (-) TimerEvent: {}
+[38.381905] (-) TimerEvent: {}
+[38.482864] (-) TimerEvent: {}
+[38.583706] (-) TimerEvent: {}
+[38.684725] (-) TimerEvent: {}
+[38.785589] (-) TimerEvent: {}
+[38.886183] (-) TimerEvent: {}
+[38.986938] (-) TimerEvent: {}
+[39.087821] (-) TimerEvent: {}
+[39.188538] (-) TimerEvent: {}
+[39.289336] (-) TimerEvent: {}
+[39.390054] (-) TimerEvent: {}
+[39.491127] (-) TimerEvent: {}
+[39.591835] (-) TimerEvent: {}
+[39.692589] (-) TimerEvent: {}
+[39.793774] (-) TimerEvent: {}
+[39.894346] (-) TimerEvent: {}
+[39.994849] (-) TimerEvent: {}
+[40.095275] (-) TimerEvent: {}
+[40.195702] (-) TimerEvent: {}
+[40.296428] (-) TimerEvent: {}
+[40.397271] (-) TimerEvent: {}
+[40.498093] (-) TimerEvent: {}
+[40.598946] (-) TimerEvent: {}
+[40.699888] (-) TimerEvent: {}
+[40.800941] (-) TimerEvent: {}
+[40.901953] (-) TimerEvent: {}
+[41.002794] (-) TimerEvent: {}
+[41.103672] (-) TimerEvent: {}
+[41.204379] (-) TimerEvent: {}
+[41.304823] (-) TimerEvent: {}
+[41.405380] (-) TimerEvent: {}
+[41.506169] (-) TimerEvent: {}
+[41.607147] (-) TimerEvent: {}
+[41.707885] (-) TimerEvent: {}
+[41.808761] (-) TimerEvent: {}
+[41.909269] (-) TimerEvent: {}
+[42.010639] (-) TimerEvent: {}
+[42.111608] (-) TimerEvent: {}
+[42.212089] (-) TimerEvent: {}
+[42.313032] (-) TimerEvent: {}
+[42.413784] (-) TimerEvent: {}
+[42.514274] (-) TimerEvent: {}
+[42.615110] (-) TimerEvent: {}
+[42.715994] (-) TimerEvent: {}
+[42.816465] (-) TimerEvent: {}
+[42.917054] (-) TimerEvent: {}
+[43.017736] (-) TimerEvent: {}
+[43.118355] (-) TimerEvent: {}
+[43.218902] (-) TimerEvent: {}
+[43.319601] (-) TimerEvent: {}
+[43.420250] (-) TimerEvent: {}
+[43.521052] (-) TimerEvent: {}
+[43.621714] (-) TimerEvent: {}
+[43.722119] (-) TimerEvent: {}
+[43.822687] (-) TimerEvent: {}
+[43.923639] (-) TimerEvent: {}
+[44.024731] (-) TimerEvent: {}
+[44.125506] (-) TimerEvent: {}
+[44.226249] (-) TimerEvent: {}
+[44.327245] (-) TimerEvent: {}
+[44.428409] (-) TimerEvent: {}
+[44.529429] (-) TimerEvent: {}
+[44.630204] (-) TimerEvent: {}
+[44.730864] (-) TimerEvent: {}
+[44.831217] (-) TimerEvent: {}
+[44.931588] (-) TimerEvent: {}
+[45.032431] (-) TimerEvent: {}
+[45.133134] (-) TimerEvent: {}
+[45.234395] (-) TimerEvent: {}
+[45.335510] (-) TimerEvent: {}
+[45.436337] (-) TimerEvent: {}
+[45.536794] (-) TimerEvent: {}
+[45.637575] (-) TimerEvent: {}
+[45.738094] (-) TimerEvent: {}
+[45.838870] (-) TimerEvent: {}
+[45.939627] (-) TimerEvent: {}
+[46.040526] (-) TimerEvent: {}
+[46.141241] (-) TimerEvent: {}
+[46.242158] (-) TimerEvent: {}
+[46.343009] (-) TimerEvent: {}
+[46.444034] (-) TimerEvent: {}
+[46.544919] (-) TimerEvent: {}
+[46.645808] (-) TimerEvent: {}
+[46.746785] (-) TimerEvent: {}
+[46.847568] (-) TimerEvent: {}
+[46.948273] (-) TimerEvent: {}
+[47.049007] (-) TimerEvent: {}
+[47.149362] (-) TimerEvent: {}
+[47.249749] (-) TimerEvent: {}
+[47.350381] (-) TimerEvent: {}
+[47.451056] (-) TimerEvent: {}
+[47.551995] (-) TimerEvent: {}
+[47.652384] (-) TimerEvent: {}
+[47.752803] (-) TimerEvent: {}
+[47.854764] (-) TimerEvent: {}
+[47.955848] (-) TimerEvent: {}
+[48.056549] (-) TimerEvent: {}
+[48.112074] (ur3_pick_place) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable pick_place_node\x1b[0m\n'}
+[48.156790] (-) TimerEvent: {}
+[48.258062] (-) TimerEvent: {}
+[48.358666] (-) TimerEvent: {}
+[48.459419] (-) TimerEvent: {}
+[48.560526] (-) TimerEvent: {}
+[48.661181] (-) TimerEvent: {}
+[48.761659] (-) TimerEvent: {}
+[48.862323] (-) TimerEvent: {}
+[48.962896] (-) TimerEvent: {}
+[49.063791] (-) TimerEvent: {}
+[49.164699] (-) TimerEvent: {}
+[49.265452] (-) TimerEvent: {}
+[49.366254] (-) TimerEvent: {}
+[49.467347] (-) TimerEvent: {}
+[49.568176] (-) TimerEvent: {}
+[49.668864] (-) TimerEvent: {}
+[49.769255] (-) TimerEvent: {}
+[49.869718] (-) TimerEvent: {}
+[49.970174] (-) TimerEvent: {}
+[50.070709] (-) TimerEvent: {}
+[50.171466] (-) TimerEvent: {}
+[50.272216] (-) TimerEvent: {}
+[50.372987] (-) TimerEvent: {}
+[50.378903] (ur3_pick_place) StdoutLine: {'line': b'[100%] Built target pick_place_node\n'}
+[50.429626] (ur3_pick_place) CommandEnded: {'returncode': 0}
+[50.473462] (-) TimerEvent: {}
+[50.535369] (ur3_pick_place) JobProgress: {'identifier': 'ur3_pick_place', 'progress': 'install'}
+[50.574097] (ur3_pick_place) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/lachu/ros2_workspaces/build/ur3_pick_place'], 'cwd': '/home/lachu/ros2_workspaces/build/ur3_pick_place', 'env': OrderedDict({'GJS_DEBUG_TOPICS': 'JS ERROR;JS LOG', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'GZ_SIM_RESOURCE_PATH': '/usr/share/gz/gz-sim/models:/usr/share/gz/gz-sim/models::/home/lachu/ur3_ws/src/ur3_pick_place/worlds:/home/lachu/ur3_ws/src/ur3_pick_place/worlds:/home/lachu/ur3_ws/src/ur3_pick_place/worlds:/home/lachu/ur3_ws/src/ur3_pick_place/worlds', 'USER': 'lachu', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'XDG_SESSION_TYPE': 'x11', 'GIT_ASKPASS': '/usr/share/code-insiders/resources/app/extensions/git/dist/askpass.sh', 'SHLVL': '1', 'LIBGL_ALWAYS_SOFTWARE': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'LESS': '-FX', 'HOME': '/home/lachu', 'CHROME_DESKTOP': 'code-insiders.desktop', 'OLDPWD': '/home/lachu/ros2_workspaces', 'TERM_PROGRAM_VERSION': '1.100.0-insider', 'DESKTOP_SESSION': 'ubuntu', 'GIO_LAUNCHED_DESKTOP_FILE': '/usr/share/applications/code-insiders.desktop', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'PAGER': 'cat', 'VSCODE_GIT_ASKPASS_MAIN': '/usr/share/code-insiders/resources/app/extensions/git/dist/askpass-main.js', 'VSCODE_GIT_ASKPASS_NODE': '/usr/share/code-insiders/code-insiders', 'MANAGERPID': '2177', 'SYSTEMD_EXEC_PID': '2574', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'GIO_LAUNCHED_DESKTOP_FILE_PID': '27190', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'COLCON_PREFIX_PATH': '/home/lachu/ros2_workspaces/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'lachu', 'JOURNAL_STREAM': '9:24007', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.Shell@x11.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'lachu', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'WINDOWPATH': '2', 'PATH': '/home/lachu/.local/bin:/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/home/lachu/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/lachu/.config/Code - Insiders/User/globalStorage/github.copilot-chat/debugCommand', 'SESSION_MANAGER': 'local/lachu-Vivobook-ASUSLaptop-K3605VC-K3605VC:@/tmp/.ICE-unix/2528,unix/lachu-Vivobook-ASUSLaptop-K3605VC-K3605VC:/tmp/.ICE-unix/2528', 'INVOCATION_ID': '416a8d7ba164470689a2c8635836e465', 'XDG_MENU_PREFIX': 'gnome-', 'XDG_RUNTIME_DIR': '/run/user/1000', 'GDK_BACKEND': 'x11', 'DISPLAY': ':1', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'Unity', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/gdm/Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'SBX_CHROME_API_RQ': '1', 'VSCODE_GIT_IPC_HANDLE': '/run/user/1000/vscode-git-bca2fc37cc.sock', 'TERM_PROGRAM': 'vscode', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/lachu/ros2_workspaces/install/ur3_pick_place:/opt/ros/jazzy', 'ORIGINAL_XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'GJS_DEBUG_OUTPUT': 'stderr', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'VSCODE_GIT_ASKPASS_EXTRA_ARGS': '', 'GIT_PAGER': 'cat', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/lachu/ros2_workspaces/build/ur3_pick_place', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'QTWEBENGINE_DICTIONARIES_PATH': '/usr/share/hunspell-bdic/', 'PYTHONPATH': '/home/lachu/ros2_workspaces/install/ur3_pick_place/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'CMAKE_PREFIX_PATH': '/home/lachu/ros2_workspaces/install/ur3_pick_place:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[50.578619] (-) TimerEvent: {}
+[50.609425] (ur3_pick_place) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[50.610676] (ur3_pick_place) StdoutLine: {'line': b'-- Installing: /home/lachu/ros2_workspaces/install/ur3_pick_place/lib/ur3_pick_place/pick_place_node\n'}
+[50.639374] (ur3_pick_place) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/lachu/ros2_workspaces/install/ur3_pick_place/lib/ur3_pick_place/pick_place_node" to ""\n'}
+[50.641598] (ur3_pick_place) StdoutLine: {'line': b'-- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/urdf\n'}
+[50.642689] (ur3_pick_place) StdoutLine: {'line': b'-- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/urdf/ur3_gripper.urdf.xacro\n'}
+[50.643344] (ur3_pick_place) StdoutLine: {'line': b'-- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/urdf/gripper.urdf.xacro\n'}
+[50.643912] (ur3_pick_place) StdoutLine: {'line': b'-- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/urdf/ur3_with_gripper.urdf.xacro\n'}
+[50.644232] (ur3_pick_place) StdoutLine: {'line': b'-- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/urdf/ur3_with_gripper.urdf\n'}
+[50.644528] (ur3_pick_place) StdoutLine: {'line': b'-- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/urdf/simple_ur3.urdf\n'}
+[50.644827] (ur3_pick_place) StdoutLine: {'line': b'-- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/urdf/ur3.urdf.xacro\n'}
+[50.645030] (ur3_pick_place) StdoutLine: {'line': b'-- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/urdf/ur3_robot.urdf.xacro\n'}
+[50.645214] (ur3_pick_place) StdoutLine: {'line': b'-- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/meshes\n'}
+[50.645481] (ur3_pick_place) StdoutLine: {'line': b'-- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/meshes/collision\n'}
+[50.645739] (ur3_pick_place) StdoutLine: {'line': b'-- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/meshes/collision/wrist1.stl\n'}
+[50.646002] (ur3_pick_place) StdoutLine: {'line': b'-- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/meshes/collision/upperarm.stl\n'}
+[50.646313] (ur3_pick_place) StdoutLine: {'line': b'-- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/meshes/collision/shoulder.stl\n'}
+[50.646605] (ur3_pick_place) StdoutLine: {'line': b'-- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/meshes/collision/base.stl\n'}
+[50.646845] (ur3_pick_place) StdoutLine: {'line': b'-- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/meshes/collision/wrist2.stl\n'}
+[50.647788] (ur3_pick_place) StdoutLine: {'line': b'-- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/meshes/collision/forearm.stl\n'}
+[50.648320] (ur3_pick_place) StdoutLine: {'line': b'-- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/meshes/collision/wrist3.stl\n'}
+[50.648831] (ur3_pick_place) StdoutLine: {'line': b'-- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/meshes/visual\n'}
+[50.650070] (ur3_pick_place) StdoutLine: {'line': b'-- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/meshes/visual/shoulder.dae\n'}
+[50.651063] (ur3_pick_place) StdoutLine: {'line': b'-- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/meshes/visual/wrist2.dae\n'}
+[50.651746] (ur3_pick_place) StdoutLine: {'line': b'-- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/meshes/visual/base.dae\n'}
+[50.652044] (ur3_pick_place) StdoutLine: {'line': b'-- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/meshes/visual/wrist3.dae\n'}
+[50.652245] (ur3_pick_place) StdoutLine: {'line': b'-- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/meshes/visual/upperarm.dae\n'}
+[50.652489] (ur3_pick_place) StdoutLine: {'line': b'-- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/meshes/visual/wrist1.dae\n'}
+[50.652707] (ur3_pick_place) StdoutLine: {'line': b'-- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/meshes/visual/forearm.dae\n'}
+[50.652936] (ur3_pick_place) StdoutLine: {'line': b'-- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/config\n'}
+[50.653174] (ur3_pick_place) StdoutLine: {'line': b'-- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/config/moveit_controllers.yaml\n'}
+[50.653451] (ur3_pick_place) StdoutLine: {'line': b'-- Installing: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/config/ur3.srdf\n'}
+[50.653704] (ur3_pick_place) StdoutLine: {'line': b'-- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/config/controllers.yaml\n'}
+[50.653997] (ur3_pick_place) StdoutLine: {'line': b'-- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/config/kinematics.yaml\n'}
+[50.654249] (ur3_pick_place) StdoutLine: {'line': b'-- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/config/view_robot.rviz\n'}
+[50.654540] (ur3_pick_place) StdoutLine: {'line': b'-- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/config/ur3_controllers.yaml\n'}
+[50.654866] (ur3_pick_place) StdoutLine: {'line': b'-- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/config/gazebo_params.yaml\n'}
+[50.655180] (ur3_pick_place) StdoutLine: {'line': b'-- Installing: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/config/moveit_planning.yaml\n'}
+[50.655513] (ur3_pick_place) StdoutLine: {'line': b'-- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/config/joint_limits.yaml\n'}
+[50.655836] (ur3_pick_place) StdoutLine: {'line': b'-- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/worlds\n'}
+[50.656141] (ur3_pick_place) StdoutLine: {'line': b'-- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/worlds/pick_place.world\n'}
+[50.656499] (ur3_pick_place) StdoutLine: {'line': b'-- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/launch\n'}
+[50.656754] (ur3_pick_place) StdoutLine: {'line': b'-- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/launch/process_xacro.sh\n'}
+[50.656997] (ur3_pick_place) StdoutLine: {'line': b'-- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/launch/ur3_moveit.launch.py\n'}
+[50.657212] (ur3_pick_place) StdoutLine: {'line': b'-- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/launch/pick_place_demo.launch.py\n'}
+[50.657472] (ur3_pick_place) StdoutLine: {'line': b'-- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/launch/test_pick_place.launch.py\n'}
+[50.657691] (ur3_pick_place) StdoutLine: {'line': b'-- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/launch/complete_demo.launch.py\n'}
+[50.657910] (ur3_pick_place) StdoutLine: {'line': b'-- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/launch/classic_gazebo.launch.py\n'}
+[50.658048] (ur3_pick_place) StdoutLine: {'line': b'-- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/launch/pick_place_gazebo_demo.launch.py\n'}
+[50.658184] (ur3_pick_place) StdoutLine: {'line': b'-- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/launch/gazebo_simulation.launch.py\n'}
+[50.658341] (ur3_pick_place) StdoutLine: {'line': b'-- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/launch/pick_place_demo_simple.launch.py\n'}
+[50.658521] (ur3_pick_place) StdoutLine: {'line': b'-- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/launch/simple_gazebo.launch.py\n'}
+[50.658697] (ur3_pick_place) StdoutLine: {'line': b'-- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/launch/spawn_simple_box.launch.py\n'}
+[50.658833] (ur3_pick_place) StdoutLine: {'line': b'-- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/launch/spawn_simple_ur3.launch.py\n'}
+[50.658988] (ur3_pick_place) StdoutLine: {'line': b'-- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/launch/robot_description.launch.py\n'}
+[50.659136] (ur3_pick_place) StdoutLine: {'line': b'-- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/launch/spawn_ur3_sdf.launch.py\n'}
+[50.659338] (ur3_pick_place) StdoutLine: {'line': b'-- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/launch/spawn_ur3.launch.py\n'}
+[50.659517] (ur3_pick_place) StdoutLine: {'line': b'-- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/launch/spawn_models_service.launch.py\n'}
+[50.659734] (ur3_pick_place) StdoutLine: {'line': b'-- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/launch/pick_place.launch.py\n'}
+[50.659920] (ur3_pick_place) StdoutLine: {'line': b'-- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/launch/start_gazebo.launch.py\n'}
+[50.660084] (ur3_pick_place) StdoutLine: {'line': b'-- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/launch/spawn_objects.launch.py\n'}
+[50.660252] (ur3_pick_place) StdoutLine: {'line': b'-- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/launch/spawn_robot_node.launch.py\n'}
+[50.660473] (ur3_pick_place) StdoutLine: {'line': b'-- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/lib/ur3_pick_place/scripts\n'}
+[50.660699] (ur3_pick_place) StdoutLine: {'line': b'-- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/lib/ur3_pick_place/scripts/test_pick_place.py\n'}
+[50.660843] (ur3_pick_place) StdoutLine: {'line': b'-- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/lib/ur3_pick_place/scripts/spawn_robot.py\n'}
+[50.660979] (ur3_pick_place) StdoutLine: {'line': b'-- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/environment/pythonpath.sh\n'}
+[50.661107] (ur3_pick_place) StdoutLine: {'line': b'-- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/environment/pythonpath.dsv\n'}
+[50.661241] (ur3_pick_place) StdoutLine: {'line': b'-- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/lib/python3.12/site-packages/ur3_pick_place-0.0.1-py3.12.egg-info\n'}
+[50.661416] (ur3_pick_place) StdoutLine: {'line': b'-- Installing: /home/lachu/ros2_workspaces/install/ur3_pick_place/lib/python3.12/site-packages/ur3_pick_place-0.0.1-py3.12.egg-info/dependency_links.txt\n'}
+[50.661654] (ur3_pick_place) StdoutLine: {'line': b'-- Installing: /home/lachu/ros2_workspaces/install/ur3_pick_place/lib/python3.12/site-packages/ur3_pick_place-0.0.1-py3.12.egg-info/SOURCES.txt\n'}
+[50.661804] (ur3_pick_place) StdoutLine: {'line': b'-- Installing: /home/lachu/ros2_workspaces/install/ur3_pick_place/lib/python3.12/site-packages/ur3_pick_place-0.0.1-py3.12.egg-info/top_level.txt\n'}
+[50.662002] (ur3_pick_place) StdoutLine: {'line': b'-- Installing: /home/lachu/ros2_workspaces/install/ur3_pick_place/lib/python3.12/site-packages/ur3_pick_place-0.0.1-py3.12.egg-info/PKG-INFO\n'}
+[50.662176] (ur3_pick_place) StdoutLine: {'line': b'-- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/lib/python3.12/site-packages/ur3_pick_place\n'}
+[50.662375] (ur3_pick_place) StdoutLine: {'line': b'-- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/lib/python3.12/site-packages/ur3_pick_place/nodes\n'}
+[50.662554] (ur3_pick_place) StdoutLine: {'line': b'-- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/lib/python3.12/site-packages/ur3_pick_place/nodes/pick_place_node.py\n'}
+[50.662720] (ur3_pick_place) StdoutLine: {'line': b'-- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/lib/python3.12/site-packages/ur3_pick_place/nodes/__init__.py\n'}
+[50.662921] (ur3_pick_place) StdoutLine: {'line': b'-- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/lib/python3.12/site-packages/ur3_pick_place/spawn_objects.py\n'}
+[50.663109] (ur3_pick_place) StdoutLine: {'line': b'-- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/lib/python3.12/site-packages/ur3_pick_place/pick_place_node.py\n'}
+[50.663312] (ur3_pick_place) StdoutLine: {'line': b'-- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/lib/python3.12/site-packages/ur3_pick_place/__init__.py\n'}
+[50.678846] (-) TimerEvent: {}
+[50.779534] (-) TimerEvent: {}
+[50.784703] (ur3_pick_place) StdoutLine: {'line': b"Listing '/home/lachu/ros2_workspaces/install/ur3_pick_place/lib/python3.12/site-packages/ur3_pick_place'...\n"}
+[50.785075] (ur3_pick_place) StdoutLine: {'line': b"Listing '/home/lachu/ros2_workspaces/install/ur3_pick_place/lib/python3.12/site-packages/ur3_pick_place/nodes'...\n"}
+[50.796913] (ur3_pick_place) StdoutLine: {'line': b'-- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ament_index/resource_index/package_run_dependencies/ur3_pick_place\n'}
+[50.797338] (ur3_pick_place) StdoutLine: {'line': b'-- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ament_index/resource_index/parent_prefix_path/ur3_pick_place\n'}
+[50.797502] (ur3_pick_place) StdoutLine: {'line': b'-- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/environment/ament_prefix_path.sh\n'}
+[50.797614] (ur3_pick_place) StdoutLine: {'line': b'-- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/environment/ament_prefix_path.dsv\n'}
+[50.797726] (ur3_pick_place) StdoutLine: {'line': b'-- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/environment/path.sh\n'}
+[50.797993] (ur3_pick_place) StdoutLine: {'line': b'-- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/environment/path.dsv\n'}
+[50.798259] (ur3_pick_place) StdoutLine: {'line': b'-- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/local_setup.bash\n'}
+[50.798810] (ur3_pick_place) StdoutLine: {'line': b'-- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/local_setup.sh\n'}
+[50.799509] (ur3_pick_place) StdoutLine: {'line': b'-- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/local_setup.zsh\n'}
+[50.799871] (ur3_pick_place) StdoutLine: {'line': b'-- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/local_setup.dsv\n'}
+[50.800177] (ur3_pick_place) StdoutLine: {'line': b'-- Installing: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/package.dsv\n'}
+[50.800510] (ur3_pick_place) StdoutLine: {'line': b'-- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ament_index/resource_index/packages/ur3_pick_place\n'}
+[50.800866] (ur3_pick_place) StdoutLine: {'line': b'-- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[50.801241] (ur3_pick_place) StdoutLine: {'line': b'-- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[50.801570] (ur3_pick_place) StdoutLine: {'line': b'-- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/cmake/ur3_pick_placeConfig.cmake\n'}
+[50.801820] (ur3_pick_place) StdoutLine: {'line': b'-- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/cmake/ur3_pick_placeConfig-version.cmake\n'}
+[50.802129] (ur3_pick_place) StdoutLine: {'line': b'-- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/package.xml\n'}
+[50.805238] (ur3_pick_place) CommandEnded: {'returncode': 0}
+[50.879854] (-) TimerEvent: {}
+[50.981547] (-) TimerEvent: {}
+[51.084114] (-) TimerEvent: {}
+[51.184738] (-) TimerEvent: {}
+[51.287071] (-) TimerEvent: {}
+[51.387934] (-) TimerEvent: {}
+[51.488656] (-) TimerEvent: {}
+[51.575499] (ur3_pick_place) JobEnded: {'identifier': 'ur3_pick_place', 'rc': 0}
+[51.578155] (-) EventReactorShutdown: {}

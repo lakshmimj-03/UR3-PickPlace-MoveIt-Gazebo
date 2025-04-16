@@ -1,0 +1,254 @@
+#!/bin/bash
+
+# Create a symbolic link in the ROS2 package path
+mkdir -p ~/.ros/ur3_pick_place
+ln -sf /home/lachu/ros2_workspaces/ros2_ws/src/ur3_pick_place/meshes ~/.ros/ur3_pick_place/
+
+# Create a new URDF file with package:// URIs
+cat > ur3_with_meshes.urdf.xacro << 'EOF'
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://wiki.ros.org/xacro" name="ur3_with_meshes">
+    <!-- Parameters -->
+    <!-- Using the built-in pi constant from xacro -->
+    <!-- <xacro:property name="pi" value="3.1415926535897931"/> -->
+
+    <!-- Materials -->
+    <material name="UR_Blue">
+      <color rgba="0.1 0.1 0.8 1.0"/>
+    </material>
+
+    <material name="Grey">
+      <color rgba="0.7 0.7 0.7 1.0"/>
+    </material>
+
+    <!-- UR3 specific dimensions -->
+    <xacro:property name="shoulder_height" value="0.1519"/>
+    <xacro:property name="upper_arm_length" value="0.24365"/>
+    <xacro:property name="forearm_length" value="0.21325"/>
+    <xacro:property name="wrist_1_length" value="0.08535"/>
+    <xacro:property name="wrist_2_length" value="0.08535"/>
+    <xacro:property name="wrist_3_length" value="0.08195"/>
+
+    <!-- Links -->
+    <link name="world"/>
+
+    <link name="base_link">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://ur3_pick_place/meshes/visual/base.dae"/>
+        </geometry>
+        <material name="UR_Blue"/>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://ur3_pick_place/meshes/collision/base.stl"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="4.0"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <inertia ixx="0.00443333156" ixy="0.0" ixz="0.0" iyy="0.00443333156" iyz="0.0" izz="0.0072"/>
+      </inertial>
+    </link>
+
+    <joint name="world_joint" type="fixed">
+      <parent link="world"/>
+      <child link="base_link"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <dynamics damping="0.0" friction="0.0"/>
+    </joint>
+
+    <link name="shoulder_link">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://ur3_pick_place/meshes/visual/shoulder.dae"/>
+        </geometry>
+        <material name="UR_Blue"/>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://ur3_pick_place/meshes/collision/shoulder.stl"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="3.7"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <inertia ixx="0.010267495893" ixy="0.0" ixz="0.0" iyy="0.010267495893" iyz="0.0" izz="0.00666"/>
+      </inertial>
+    </link>
+
+    <joint name="shoulder_pan_joint" type="revolute">
+      <parent link="base_link"/>
+      <child link="shoulder_link"/>
+      <origin xyz="0 0 ${shoulder_height}" rpy="0 0 0"/>
+      <axis xyz="0 0 1"/>
+      <limit lower="${-2*pi}" upper="${2*pi}" effort="150.0" velocity="3.15"/>
+      <dynamics damping="0.0" friction="0.0"/>
+    </joint>
+
+    <link name="upper_arm_link">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://ur3_pick_place/meshes/visual/upperarm.dae"/>
+        </geometry>
+        <material name="UR_Blue"/>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://ur3_pick_place/meshes/collision/upperarm.stl"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="8.393"/>
+        <origin xyz="0 0 ${upper_arm_length/2}" rpy="0 0 0"/>
+        <inertia ixx="0.22689067591" ixy="0.0" ixz="0.0" iyy="0.22689067591" iyz="0.0" izz="0.0151074"/>
+      </inertial>
+    </link>
+
+    <joint name="shoulder_lift_joint" type="revolute">
+      <parent link="shoulder_link"/>
+      <child link="upper_arm_link"/>
+      <origin xyz="0 0 0" rpy="0 ${pi/2} 0"/>
+      <axis xyz="0 1 0"/>
+      <limit lower="${-2*pi}" upper="${2*pi}" effort="150.0" velocity="3.15"/>
+      <dynamics damping="0.0" friction="0.0"/>
+    </joint>
+
+    <link name="forearm_link">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://ur3_pick_place/meshes/visual/forearm.dae"/>
+        </geometry>
+        <material name="UR_Blue"/>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://ur3_pick_place/meshes/collision/forearm.stl"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="2.275"/>
+        <origin xyz="0 0 ${forearm_length/2}" rpy="0 0 0"/>
+        <inertia ixx="0.049443313556" ixy="0.0" ixz="0.0" iyy="0.049443313556" iyz="0.0" izz="0.004095"/>
+      </inertial>
+    </link>
+
+    <joint name="elbow_joint" type="revolute">
+      <parent link="upper_arm_link"/>
+      <child link="forearm_link"/>
+      <origin xyz="0 -0.093 ${upper_arm_length}" rpy="0 0 0"/>
+      <axis xyz="0 1 0"/>
+      <limit lower="${-2*pi}" upper="${2*pi}" effort="150.0" velocity="3.15"/>
+      <dynamics damping="0.0" friction="0.0"/>
+    </joint>
+
+    <link name="wrist_1_link">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://ur3_pick_place/meshes/visual/wrist1.dae"/>
+        </geometry>
+        <material name="UR_Blue"/>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://ur3_pick_place/meshes/collision/wrist1.stl"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="1.219"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <inertia ixx="0.111172755531" ixy="0.0" ixz="0.0" iyy="0.111172755531" iyz="0.0" izz="0.21942"/>
+      </inertial>
+    </link>
+
+    <joint name="wrist_1_joint" type="revolute">
+      <parent link="forearm_link"/>
+      <child link="wrist_1_link"/>
+      <origin xyz="0 0 ${forearm_length}" rpy="0 ${pi/2} 0"/>
+      <axis xyz="0 1 0"/>
+      <limit lower="${-2*pi}" upper="${2*pi}" effort="28.0" velocity="3.2"/>
+      <dynamics damping="0.0" friction="0.0"/>
+    </joint>
+
+    <link name="wrist_2_link">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://ur3_pick_place/meshes/visual/wrist2.dae"/>
+        </geometry>
+        <material name="UR_Blue"/>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://ur3_pick_place/meshes/collision/wrist2.stl"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="1.219"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <inertia ixx="0.111172755531" ixy="0.0" ixz="0.0" iyy="0.111172755531" iyz="0.0" izz="0.21942"/>
+      </inertial>
+    </link>
+
+    <joint name="wrist_2_joint" type="revolute">
+      <parent link="wrist_1_link"/>
+      <child link="wrist_2_link"/>
+      <origin xyz="0 ${wrist_1_length} 0" rpy="0 0 0"/>
+      <axis xyz="0 0 1"/>
+      <limit lower="${-2*pi}" upper="${2*pi}" effort="28.0" velocity="3.2"/>
+      <dynamics damping="0.0" friction="0.0"/>
+    </joint>
+
+    <link name="wrist_3_link">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://ur3_pick_place/meshes/visual/wrist3.dae"/>
+        </geometry>
+        <material name="UR_Blue"/>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://ur3_pick_place/meshes/collision/wrist3.stl"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="0.1879"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <inertia ixx="0.0171364731454" ixy="0.0" ixz="0.0" iyy="0.0171364731454" iyz="0.0" izz="0.033822"/>
+      </inertial>
+    </link>
+
+    <joint name="wrist_3_joint" type="revolute">
+      <parent link="wrist_2_link"/>
+      <child link="wrist_3_link"/>
+      <origin xyz="0 0 ${wrist_2_length}" rpy="0 0 0"/>
+      <axis xyz="0 1 0"/>
+      <limit lower="${-2*pi}" upper="${2*pi}" effort="28.0" velocity="3.2"/>
+      <dynamics damping="0.0" friction="0.0"/>
+    </joint>
+
+    <link name="tool0"/>
+
+    <joint name="wrist_3_link-tool0_fixed_joint" type="fixed">
+      <parent link="wrist_3_link"/>
+      <child link="tool0"/>
+      <origin xyz="0 ${wrist_3_length} 0" rpy="${pi/2} 0 0"/>
+    </joint>
+</robot>
+EOF
+
+echo "Setup complete. Now you can run the following command to restart the robot state publisher with mesh support:"
+echo "source /opt/ros/jazzy/setup.bash && ros2 run robot_state_publisher robot_state_publisher --ros-args -p robot_description:=\"\$(xacro ur3_with_meshes.urdf.xacro)\""

@@ -1,0 +1,112 @@
+[0.317s] Invoking command in '/home/lachu/ros2_workspaces/build/ur3_pick_place': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/lachu/ros2_workspaces/build/ur3_pick_place -- -j16 -l16
+[0.578s] [  0%] Built target ament_cmake_python_copy_ur3_pick_place
+[0.618s] [ 50%] [32mBuilding CXX object CMakeFiles/pick_place_node.dir/src/pick_place_node.cpp.o[0m
+[1.280s] running egg_info
+[1.306s] writing ur3_pick_place.egg-info/PKG-INFO
+[1.306s] writing dependency_links to ur3_pick_place.egg-info/dependency_links.txt
+[1.307s] writing top-level names to ur3_pick_place.egg-info/top_level.txt
+[1.385s] reading manifest file 'ur3_pick_place.egg-info/SOURCES.txt'
+[1.387s] writing manifest file 'ur3_pick_place.egg-info/SOURCES.txt'
+[1.457s] [ 50%] Built target ament_cmake_python_build_ur3_pick_place_egg
+[48.107s] [100%] [32m[1mLinking CXX executable pick_place_node[0m
+[50.374s] [100%] Built target pick_place_node
+[50.425s] Invoked command in '/home/lachu/ros2_workspaces/build/ur3_pick_place' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/lachu/ros2_workspaces/build/ur3_pick_place -- -j16 -l16
+[50.571s] Invoking command in '/home/lachu/ros2_workspaces/build/ur3_pick_place': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/lachu/ros2_workspaces/build/ur3_pick_place
+[50.604s] -- Install configuration: ""
+[50.606s] -- Installing: /home/lachu/ros2_workspaces/install/ur3_pick_place/lib/ur3_pick_place/pick_place_node
+[50.635s] -- Set non-toolchain portion of runtime path of "/home/lachu/ros2_workspaces/install/ur3_pick_place/lib/ur3_pick_place/pick_place_node" to ""
+[50.637s] -- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/urdf
+[50.637s] -- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/urdf/ur3_gripper.urdf.xacro
+[50.638s] -- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/urdf/gripper.urdf.xacro
+[50.638s] -- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/urdf/ur3_with_gripper.urdf.xacro
+[50.639s] -- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/urdf/ur3_with_gripper.urdf
+[50.639s] -- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/urdf/simple_ur3.urdf
+[50.639s] -- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/urdf/ur3.urdf.xacro
+[50.639s] -- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/urdf/ur3_robot.urdf.xacro
+[50.640s] -- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/meshes
+[50.640s] -- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/meshes/collision
+[50.640s] -- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/meshes/collision/wrist1.stl
+[50.640s] -- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/meshes/collision/upperarm.stl
+[50.641s] -- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/meshes/collision/shoulder.stl
+[50.641s] -- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/meshes/collision/base.stl
+[50.642s] -- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/meshes/collision/wrist2.stl
+[50.642s] -- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/meshes/collision/forearm.stl
+[50.643s] -- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/meshes/collision/wrist3.stl
+[50.644s] -- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/meshes/visual
+[50.645s] -- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/meshes/visual/shoulder.dae
+[50.646s] -- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/meshes/visual/wrist2.dae
+[50.646s] -- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/meshes/visual/base.dae
+[50.646s] -- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/meshes/visual/wrist3.dae
+[50.647s] -- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/meshes/visual/upperarm.dae
+[50.647s] -- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/meshes/visual/wrist1.dae
+[50.647s] -- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/meshes/visual/forearm.dae
+[50.647s] -- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/config
+[50.648s] -- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/config/moveit_controllers.yaml
+[50.648s] -- Installing: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/config/ur3.srdf
+[50.648s] -- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/config/controllers.yaml
+[50.648s] -- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/config/kinematics.yaml
+[50.649s] -- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/config/view_robot.rviz
+[50.649s] -- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/config/ur3_controllers.yaml
+[50.649s] -- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/config/gazebo_params.yaml
+[50.650s] -- Installing: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/config/moveit_planning.yaml
+[50.650s] -- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/config/joint_limits.yaml
+[50.650s] -- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/worlds
+[50.651s] -- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/worlds/pick_place.world
+[50.651s] -- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/launch
+[50.651s] -- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/launch/process_xacro.sh
+[50.651s] -- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/launch/ur3_moveit.launch.py
+[50.652s] -- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/launch/pick_place_demo.launch.py
+[50.652s] -- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/launch/test_pick_place.launch.py
+[50.652s] -- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/launch/complete_demo.launch.py
+[50.652s] -- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/launch/classic_gazebo.launch.py
+[50.652s] -- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/launch/pick_place_gazebo_demo.launch.py
+[50.652s] -- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/launch/gazebo_simulation.launch.py
+[50.653s] -- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/launch/pick_place_demo_simple.launch.py
+[50.653s] -- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/launch/simple_gazebo.launch.py
+[50.653s] -- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/launch/spawn_simple_box.launch.py
+[50.653s] -- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/launch/spawn_simple_ur3.launch.py
+[50.653s] -- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/launch/robot_description.launch.py
+[50.653s] -- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/launch/spawn_ur3_sdf.launch.py
+[50.654s] -- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/launch/spawn_ur3.launch.py
+[50.654s] -- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/launch/spawn_models_service.launch.py
+[50.654s] -- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/launch/pick_place.launch.py
+[50.654s] -- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/launch/start_gazebo.launch.py
+[50.654s] -- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/launch/spawn_objects.launch.py
+[50.655s] -- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/launch/spawn_robot_node.launch.py
+[50.655s] -- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/lib/ur3_pick_place/scripts
+[50.655s] -- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/lib/ur3_pick_place/scripts/test_pick_place.py
+[50.655s] -- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/lib/ur3_pick_place/scripts/spawn_robot.py
+[50.655s] -- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/environment/pythonpath.sh
+[50.655s] -- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/environment/pythonpath.dsv
+[50.656s] -- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/lib/python3.12/site-packages/ur3_pick_place-0.0.1-py3.12.egg-info
+[50.656s] -- Installing: /home/lachu/ros2_workspaces/install/ur3_pick_place/lib/python3.12/site-packages/ur3_pick_place-0.0.1-py3.12.egg-info/dependency_links.txt
+[50.656s] -- Installing: /home/lachu/ros2_workspaces/install/ur3_pick_place/lib/python3.12/site-packages/ur3_pick_place-0.0.1-py3.12.egg-info/SOURCES.txt
+[50.656s] -- Installing: /home/lachu/ros2_workspaces/install/ur3_pick_place/lib/python3.12/site-packages/ur3_pick_place-0.0.1-py3.12.egg-info/top_level.txt
+[50.656s] -- Installing: /home/lachu/ros2_workspaces/install/ur3_pick_place/lib/python3.12/site-packages/ur3_pick_place-0.0.1-py3.12.egg-info/PKG-INFO
+[50.656s] -- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/lib/python3.12/site-packages/ur3_pick_place
+[50.657s] -- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/lib/python3.12/site-packages/ur3_pick_place/nodes
+[50.657s] -- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/lib/python3.12/site-packages/ur3_pick_place/nodes/pick_place_node.py
+[50.657s] -- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/lib/python3.12/site-packages/ur3_pick_place/nodes/__init__.py
+[50.657s] -- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/lib/python3.12/site-packages/ur3_pick_place/spawn_objects.py
+[50.657s] -- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/lib/python3.12/site-packages/ur3_pick_place/pick_place_node.py
+[50.658s] -- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/lib/python3.12/site-packages/ur3_pick_place/__init__.py
+[50.779s] Listing '/home/lachu/ros2_workspaces/install/ur3_pick_place/lib/python3.12/site-packages/ur3_pick_place'...
+[50.779s] Listing '/home/lachu/ros2_workspaces/install/ur3_pick_place/lib/python3.12/site-packages/ur3_pick_place/nodes'...
+[50.791s] -- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ament_index/resource_index/package_run_dependencies/ur3_pick_place
+[50.792s] -- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ament_index/resource_index/parent_prefix_path/ur3_pick_place
+[50.792s] -- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/environment/ament_prefix_path.sh
+[50.792s] -- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/environment/ament_prefix_path.dsv
+[50.792s] -- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/environment/path.sh
+[50.792s] -- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/environment/path.dsv
+[50.793s] -- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/local_setup.bash
+[50.794s] -- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/local_setup.sh
+[50.794s] -- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/local_setup.zsh
+[50.794s] -- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/local_setup.dsv
+[50.795s] -- Installing: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/package.dsv
+[50.795s] -- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ament_index/resource_index/packages/ur3_pick_place
+[50.795s] -- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/cmake/ament_cmake_export_include_directories-extras.cmake
+[50.796s] -- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/cmake/ament_cmake_export_dependencies-extras.cmake
+[50.796s] -- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/cmake/ur3_pick_placeConfig.cmake
+[50.796s] -- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/cmake/ur3_pick_placeConfig-version.cmake
+[50.797s] -- Up-to-date: /home/lachu/ros2_workspaces/install/ur3_pick_place/share/ur3_pick_place/package.xml
+[50.800s] Invoked command in '/home/lachu/ros2_workspaces/build/ur3_pick_place' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/lachu/ros2_workspaces/build/ur3_pick_place

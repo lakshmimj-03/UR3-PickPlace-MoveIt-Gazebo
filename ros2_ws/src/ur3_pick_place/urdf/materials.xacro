@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://wiki.ros.org/xacro">
+  <!-- Universal Robot Colors -->
+  <material name="ur_blue">
+    <color rgba="0.0 0.5 0.8 1.0"/>
+  </material>
+  
+  <material name="ur_silver">
+    <color rgba="0.8 0.8 0.8 1.0"/>
+  </material>
+  
+  <material name="ur_grey">
+    <color rgba="0.5 0.5 0.5 1.0"/>
+  </material>
+  
+  <material name="ur_black">
+    <color rgba="0.1 0.1 0.1 1.0"/>
+  </material>
+  
+  <material name="ur_white">
+    <color rgba="1.0 1.0 1.0 1.0"/>
+  </material>
+  
+  <!-- Gazebo materials -->
+  <gazebo reference="base_link">
+    <material>Gazebo/Silver</material>
+  </gazebo>
+  
+  <gazebo reference="shoulder_link">
+    <material>Gazebo/Silver</material>
+  </gazebo>
+  
+  <gazebo reference="upper_arm_link">
+    <material>Gazebo/Silver</material>
+  </gazebo>
+  
+  <gazebo reference="forearm_link">
+    <material>Gazebo/Silver</material>
+  </gazebo>
+  
+  <gazebo reference="wrist_1_link">
+    <material>Gazebo/Silver</material>
+  </gazebo>
+  
+  <gazebo reference="wrist_2_link">
+    <material>Gazebo/Silver</material>
+  </gazebo>
+  
+  <gazebo reference="wrist_3_link">
+    <material>Gazebo/Silver</material>
+  </gazebo>
+  
+  <!-- Blue parts -->
+  <gazebo reference="base_link_inertia">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+  
+  <gazebo reference="shoulder_link_inertia">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+  
+  <gazebo reference="upper_arm_link_inertia">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+  
+  <gazebo reference="forearm_link_inertia">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+  
+  <gazebo reference="wrist_1_link_inertia">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+  
+  <gazebo reference="wrist_2_link_inertia">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+  
+  <gazebo reference="wrist_3_link_inertia">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+</robot>

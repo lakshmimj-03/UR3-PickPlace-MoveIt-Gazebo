@@ -1,0 +1,135 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://wiki.ros.org/xacro">
+  <!--
+    This is a modified version of the ur_macro.xacro file from the ur_description package.
+    It adds custom materials to the robot links.
+  -->
+  
+  <xacro:include filename="$(find ur_description)/urdf/ur_macro.xacro"/>
+  
+  <xacro:macro name="ur_robot_custom" params="
+    name
+    tf_prefix
+    parent
+    joint_limits_parameters_file
+    kinematics_parameters_file
+    physical_parameters_file
+    visual_parameters_file
+    safety_limits
+    safety_pos_margin
+    safety_k_position
+    *origin">
+
+    <!-- Include the original UR macro -->
+    <xacro:ur_robot
+      name="${name}"
+      tf_prefix="${tf_prefix}"
+      parent="${parent}"
+      joint_limits_parameters_file="${joint_limits_parameters_file}"
+      kinematics_parameters_file="${kinematics_parameters_file}"
+      physical_parameters_file="${physical_parameters_file}"
+      visual_parameters_file="${visual_parameters_file}"
+      safety_limits="${safety_limits}"
+      safety_pos_margin="${safety_pos_margin}"
+      safety_k_position="${safety_k_position}">
+      <xacro:insert_block name="origin"/>
+    </xacro:ur_robot>
+    
+    <!-- Apply custom materials to the links -->
+    <gazebo reference="${name}_base_link">
+      <material>Gazebo/Silver</material>
+    </gazebo>
+    
+    <gazebo reference="${name}_shoulder_link">
+      <material>Gazebo/Silver</material>
+      <visual>
+        <material>
+          <ambient>0.8 0.8 0.8 1.0</ambient>
+          <diffuse>0.8 0.8 0.8 1.0</diffuse>
+          <specular>0.8 0.8 0.8 1.0</specular>
+        </material>
+      </visual>
+    </gazebo>
+    
+    <gazebo reference="${name}_upper_arm_link">
+      <material>Gazebo/Silver</material>
+      <visual>
+        <material>
+          <ambient>0.8 0.8 0.8 1.0</ambient>
+          <diffuse>0.8 0.8 0.8 1.0</diffuse>
+          <specular>0.8 0.8 0.8 1.0</specular>
+        </material>
+      </visual>
+    </gazebo>
+    
+    <gazebo reference="${name}_forearm_link">
+      <material>Gazebo/Silver</material>
+      <visual>
+        <material>
+          <ambient>0.8 0.8 0.8 1.0</ambient>
+          <diffuse>0.8 0.8 0.8 1.0</diffuse>
+          <specular>0.8 0.8 0.8 1.0</specular>
+        </material>
+      </visual>
+    </gazebo>
+    
+    <gazebo reference="${name}_wrist_1_link">
+      <material>Gazebo/Silver</material>
+      <visual>
+        <material>
+          <ambient>0.8 0.8 0.8 1.0</ambient>
+          <diffuse>0.8 0.8 0.8 1.0</diffuse>
+          <specular>0.8 0.8 0.8 1.0</specular>
+        </material>
+      </visual>
+    </gazebo>
+    
+    <gazebo reference="${name}_wrist_2_link">
+      <material>Gazebo/Silver</material>
+      <visual>
+        <material>
+          <ambient>0.8 0.8 0.8 1.0</ambient>
+          <diffuse>0.8 0.8 0.8 1.0</diffuse>
+          <specular>0.8 0.8 0.8 1.0</specular>
+        </material>
+      </visual>
+    </gazebo>
+    
+    <gazebo reference="${name}_wrist_3_link">
+      <material>Gazebo/Silver</material>
+      <visual>
+        <material>
+          <ambient>0.8 0.8 0.8 1.0</ambient>
+          <diffuse>0.8 0.8 0.8 1.0</diffuse>
+          <specular>0.8 0.8 0.8 1.0</specular>
+        </material>
+      </visual>
+    </gazebo>
+    
+    <!-- Add blue caps to the joints -->
+    <gazebo reference="${name}_shoulder_link_cap">
+      <material>Gazebo/SkyBlue</material>
+    </gazebo>
+    
+    <gazebo reference="${name}_upper_arm_link_cap">
+      <material>Gazebo/SkyBlue</material>
+    </gazebo>
+    
+    <gazebo reference="${name}_forearm_link_cap">
+      <material>Gazebo/SkyBlue</material>
+    </gazebo>
+    
+    <gazebo reference="${name}_wrist_1_link_cap">
+      <material>Gazebo/SkyBlue</material>
+    </gazebo>
+    
+    <gazebo reference="${name}_wrist_2_link_cap">
+      <material>Gazebo/SkyBlue</material>
+    </gazebo>
+    
+    <gazebo reference="${name}_wrist_3_link_cap">
+      <material>Gazebo/SkyBlue</material>
+    </gazebo>
+    
+  </xacro:macro>
+</robot>
