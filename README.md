@@ -47,7 +47,7 @@
 
 ## Introduction
 
-This package provides a comprehensive simulation of a Universal Robots UR3 robot performing pick and place operations. The simulation focuses on smooth, realistic robot movements and proper visualization of object manipulation without requiring a full physics simulation environment like Gazebo.
+This package provides a comprehensive simulation of a Universal Robots UR3 robot performing pick and place operations. The simulation focuses on smooth, realistic robot movements and proper visualization of object manipulation
 
 The implementation demonstrates:
 - Direct control of robot joint positions
