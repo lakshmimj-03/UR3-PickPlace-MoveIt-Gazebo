@@ -47,16 +47,9 @@
 
 ## Introduction
 
-This package provides a comprehensive simulation of a Universal Robots UR3 robot performing pick and place operations. The simulation focuses on smooth, realistic robot movements and proper visualization of object manipulation
+This project implements a smooth and realistic simulation of a Universal Robots UR3 collaborative robotic arm performing a pick and place operation. The simulation uses ROS2 (Robot Operating System 2) and visualizes the robot's movements in RViz with high-fidelity 3D mesh models. The primary focus of this project is to achieve ultra-smooth, glitch-free robot motion while maintaining accurate visual representation using detailed mesh files.
 
-The implementation demonstrates:
-- Direct control of robot joint positions
-- Smooth trajectory generation with cubic ease-in/ease-out interpolation
-- Visualization of objects and their attachment to the robot gripper
-- Complete pick and place sequence with proper object handling
-- Simple and efficient launching mechanisms
-
-This detailed documentation explains the theoretical concepts, implementation details, and practical usage of the simulation.
+The simulation demonstrates a complete pick and place cycle, including approaching an object, grasping it, lifting it, moving it to a new location, placing it down, and returning to the home position. All movements are carefully interpolated using advanced trajectory generation techniques to ensure smooth acceleration and deceleration profiles with zero jerk at critical points.
 
 ## Theoretical Background
 
