@@ -416,36 +416,6 @@ self.interpolation_steps = 100
    python3.12 src/ur3_pick_place/scripts/move_robot.py --ros-args --log-level debug
    ```
 
-## Advanced Topics
-
-### Integration with MoveIt
-
-For more advanced motion planning, you can integrate the simulation with MoveIt:
-
-1. Install MoveIt for ROS 2:
-   ```bash
-   sudo apt install ros-jazzy-moveit
-   ```
-
-2. Create a MoveIt configuration for the UR3 robot
-3. Modify the robot mover script to use MoveIt for trajectory generation
-
-### Adding Collision Detection
-
-To add collision detection:
-
-1. Define collision objects in the environment
-2. Use MoveIt's collision checking capabilities
-3. Modify the robot mover script to check for collisions before executing movements
-
-### Real Robot Integration
-
-To integrate with a real UR3 robot:
-
-1. Install the UR3 ROS 2 driver
-2. Modify the robot mover script to send commands to the real robot
-3. Implement feedback from the real robot's joint states
-
 ## References
 
 1. Universal Robots UR3 Documentation: [https://www.universal-robots.com/products/ur3-robot/](https://www.universal-robots.com/products/ur3-robot/)
