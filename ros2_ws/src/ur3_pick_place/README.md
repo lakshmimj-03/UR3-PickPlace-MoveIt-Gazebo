@@ -52,6 +52,9 @@ The components interact through ROS 2 topics and services, with the pick and pla
 - Integration with Gazebo for realistic physics simulation
 - Configurable robot and environment parameters
 - Multiple launch configurations for different use cases
+- Lightweight visualization-only simulation with smooth robot movements
+- Single-command scripts for easy launching
+- Cubic ease-in/ease-out interpolation for natural robot motion
 
 ## Requirements
 
@@ -129,6 +132,61 @@ The components interact through ROS 2 topics and services, with the pick and pla
 ## Usage
 
 ### Running the Simulation
+
+#### Option 1: Using the single-command script (Recommended)
+
+To launch the complete simulation with a single command:
+
+```bash
+cd ~/ros2_workspaces/ros2_ws
+./src/ur3_pick_place/scripts/run_simulation.sh
+```
+
+This script will launch all necessary components:
+- RViz for visualization
+- Robot state publisher for publishing the robot's state
+- Robot mover script for controlling the robot
+
+Press Ctrl+C to stop all components.
+
+#### Option 2: Using the tmux script
+
+If you have tmux installed, you can use the tmux script to run all components in a single terminal window:
+
+```bash
+cd ~/ros2_workspaces/ros2_ws
+./src/ur3_pick_place/scripts/run_simulation_tmux.sh
+```
+
+This will open a tmux session with three panes:
+- Top-left: RViz
+- Bottom-left: Robot state publisher
+- Right: Robot mover script
+
+Press Ctrl+B, then D to detach from the tmux session (this will also stop all components).
+
+If you don't have tmux installed, you can install it with:
+
+```bash
+sudo apt-get install tmux
+```
+
+#### Option 3: Running components manually
+
+If you prefer to run the components manually, you can use the following commands:
+
+```bash
+# Terminal 1: Start RViz
+ros2 run rviz2 rviz2 -d src/ur3_pick_place/config/view_robot.rviz
+
+# Terminal 2: Start the robot state publisher
+ros2 run robot_state_publisher robot_state_publisher --ros-args -p robot_description:="$(xacro $(ros2 pkg prefix ur_description)/share/ur_description/urdf/ur.urdf.xacro name:=ur3_robot ur_type:=ur3 use_fake_hardware:=true safety_limits:=true safety_pos_margin:=0.15 safety_k_position:=20)"
+
+# Terminal 3: Run the robot mover script
+python3.12 src/ur3_pick_place/scripts/move_robot.py
+```
+
+#### Option 4: Using Gazebo (Full Simulation)
 
 To launch the Gazebo simulation with the UR3 robot:
 
@@ -229,6 +287,18 @@ The pick and place pipeline consists of the following steps:
    - Open the gripper to release the object
    - Move back to a safe position
 5. **Completion**: Return to the home position
+
+### Lightweight Visualization Simulation
+
+In addition to the full Gazebo simulation, this package includes a lightweight visualization-only simulation that demonstrates the pick and place operation without the overhead of a full physics simulation. This implementation:
+
+1. Uses direct joint state publishing for robot control
+2. Implements smooth motion using cubic ease-in/ease-out interpolation
+3. Visualizes objects and their attachment to the gripper
+4. Provides a complete pick and place sequence
+5. Can be launched with a single command
+
+The lightweight simulation is ideal for quick demonstrations and testing of robot movements without requiring the full Gazebo environment.
 
 ### Object Detection
 

@@ -24,6 +24,7 @@ find_package(joint_state_broadcaster REQUIRED)
 find_package(urdf REQUIRED)
 find_package(xacro REQUIRED)
 find_package(control_msgs REQUIRED)
+find_package(visualization_msgs REQUIRED)
 
 # Include directories
 include_directories(
@@ -51,9 +52,21 @@ ament_target_dependencies(pick_place_node
   control_msgs
 )
 
+# Declare and build the marker_publisher executable
+add_executable(marker_publisher
+  src/marker_publisher.cpp
+)
+
+ament_target_dependencies(marker_publisher
+  rclcpp
+  geometry_msgs
+  visualization_msgs
+)
+
 # Install executables
 install(TARGETS
   pick_place_node
+  marker_publisher
   DESTINATION lib/${PROJECT_NAME}
 )
 

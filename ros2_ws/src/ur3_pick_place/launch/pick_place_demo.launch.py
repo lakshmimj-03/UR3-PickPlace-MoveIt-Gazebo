@@ -119,12 +119,12 @@ def generate_launch_description():
         "robot_description_planning": joint_limits_yaml,
         "moveit_simple_controller_manager": moveit_controllers_yaml,
         "ompl": ompl_planning_yaml,
-        "planning_pipelines": ["ompl"],
+        "planning_pipelines": "ompl",
         "use_sim_time": True,
         "publish_robot_description": True,
         "publish_robot_description_semantic": True,
         "publish_planning_scene": True,
-        "allowed_planning_strategies": ["ompl"],
+        "allowed_planning_strategies": "ompl",
         "moveit_manage_controllers": True
     }
 
@@ -142,13 +142,14 @@ def generate_launch_description():
         )
     )
 
-    # Joint State Publisher GUI
+    # Joint State Publisher (non-GUI version for MoveIt control)
     ld.add_action(
         Node(
-            package="joint_state_publisher_gui",
-            executable="joint_state_publisher_gui",
-            name="joint_state_publisher_gui",
+            package="joint_state_publisher",
+            executable="joint_state_publisher",
+            name="joint_state_publisher",
             output="screen",
+            parameters=[{"source_list": []}],  # Empty source list means it will use MoveIt's joint states
         )
     )
 
@@ -176,29 +177,14 @@ def generate_launch_description():
         )
     )
 
-    # Pick and Place Node
-    pick_place_script = os.path.join(
-        get_package_share_directory('ur3_pick_place'),
-        'scripts',
-        'simple_pick_place.py'
-    )
-
-    # Check if the file exists
-    if not os.path.exists(pick_place_script):
-        # Try the source directory
-        pick_place_script = os.path.join(
-            os.path.dirname(os.path.dirname(os.path.realpath(__file__))),
-            'scripts',
-            'simple_pick_place.py'
-        )
-
+    # Pick and Place Demo Node
     ld.add_action(
         Node(
             package="ur3_pick_place",
-            executable=pick_place_script,
-            name="pick_place_node",
+            executable="pick_place_demo",
+            name="pick_place_demo",
             output="screen",
-            parameters=[{"use_sim_time": True}],
+            parameters=[moveit_config, {"use_sim_time": True}],
         )
     )
 

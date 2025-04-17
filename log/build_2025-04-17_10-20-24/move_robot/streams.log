@@ -1,0 +1,44 @@
+[0.086s] Invoking command in '/home/lachu/ros2_workspaces/build/move_robot': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/lachu/ros2_workspaces/move_robot -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/lachu/ros2_workspaces/install/move_robot
+[0.140s] -- The C compiler identification is GNU 13.3.0
+[0.187s] -- The CXX compiler identification is GNU 13.3.0
+[0.203s] -- Detecting C compiler ABI info
+[0.295s] -- Detecting C compiler ABI info - done
+[0.308s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.308s] -- Detecting C compile features
+[0.309s] -- Detecting C compile features - done
+[0.319s] -- Detecting CXX compiler ABI info
+[0.415s] -- Detecting CXX compiler ABI info - done
+[0.423s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.423s] -- Detecting CXX compile features
+[0.423s] -- Detecting CXX compile features - done
+[0.429s] -- Found ament_cmake: 2.5.3 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.562s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[0.630s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.675s] -- Found rclcpp: 28.1.6 (/opt/ros/jazzy/share/rclcpp/cmake)
+[0.714s] -- Found rosidl_generator_c: 4.6.5 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[0.731s] -- Found rosidl_generator_cpp: 4.6.5 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[0.746s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.762s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.845s] -- Found rmw_implementation_cmake: 7.3.1 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+[0.848s] -- Found rmw_fastrtps_cpp: 8.4.1 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+[0.935s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.13")  
+[0.954s] -- Found FastRTPS: /opt/ros/jazzy/include (Required is at least version "2.13") 
+[0.976s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[1.044s] -- Found sensor_msgs: 5.3.5 (/opt/ros/jazzy/share/sensor_msgs/cmake)
+[1.165s] -- Configuring done (1.1s)
+[1.167s] [31mCMake Error at CMakeLists.txt:13 (add_executable):
+[1.167s]   Cannot find source file:
+[1.167s] 
+[1.167s]     move_robot.cpp
+[1.168s] 
+[1.168s]   Tried extensions .c .C .c++ .cc .cpp .cxx .cu .mpp .m .M .mm .ixx .cppm
+[1.168s]   .ccm .cxxm .c++m .h .hh .h++ .hm .hpp .hxx .in .txx .f .F .for .f77 .f90
+[1.168s]   .f95 .f03 .hip .ispc
+[1.168s] 
+[1.168s] [0m
+[1.169s] [31mCMake Error at CMakeLists.txt:13 (add_executable):
+[1.169s]   No SOURCES given to target: move_robot_node
+[1.169s] 
+[1.169s] [0m
+[1.169s] [0mCMake Generate step failed.  Build files cannot be regenerated correctly.[0m
+[1.178s] Invoked command in '/home/lachu/ros2_workspaces/build/move_robot' returned '1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/lachu/ros2_workspaces/move_robot -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/lachu/ros2_workspaces/install/move_robot

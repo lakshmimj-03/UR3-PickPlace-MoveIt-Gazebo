@@ -75,7 +75,7 @@ preinstall:
 clean: CMakeFiles/uninstall.dir/clean
 clean: CMakeFiles/ur3_pick_place_uninstall.dir/clean
 clean: CMakeFiles/pick_place_node.dir/clean
-clean: CMakeFiles/ament_cmake_python_copy_ur3_pick_place.dir/clean
+clean: CMakeFiles/ament_cmake_python_symlink_ur3_pick_place.dir/clean
 clean: CMakeFiles/ament_cmake_python_build_ur3_pick_place_egg.dir/clean
 .PHONY : clean
 
@@ -158,36 +158,36 @@ CMakeFiles/pick_place_node.dir/clean:
 .PHONY : CMakeFiles/pick_place_node.dir/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/ament_cmake_python_copy_ur3_pick_place.dir
+# Target rules for target CMakeFiles/ament_cmake_python_symlink_ur3_pick_place.dir
 
 # All Build rule for target.
-CMakeFiles/ament_cmake_python_copy_ur3_pick_place.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ament_cmake_python_copy_ur3_pick_place.dir/build.make CMakeFiles/ament_cmake_python_copy_ur3_pick_place.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ament_cmake_python_copy_ur3_pick_place.dir/build.make CMakeFiles/ament_cmake_python_copy_ur3_pick_place.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/lachu/ros2_workspaces/build/ur3_pick_place/CMakeFiles --progress-num= "Built target ament_cmake_python_copy_ur3_pick_place"
-.PHONY : CMakeFiles/ament_cmake_python_copy_ur3_pick_place.dir/all
+CMakeFiles/ament_cmake_python_symlink_ur3_pick_place.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ament_cmake_python_symlink_ur3_pick_place.dir/build.make CMakeFiles/ament_cmake_python_symlink_ur3_pick_place.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ament_cmake_python_symlink_ur3_pick_place.dir/build.make CMakeFiles/ament_cmake_python_symlink_ur3_pick_place.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/lachu/ros2_workspaces/build/ur3_pick_place/CMakeFiles --progress-num= "Built target ament_cmake_python_symlink_ur3_pick_place"
+.PHONY : CMakeFiles/ament_cmake_python_symlink_ur3_pick_place.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/ament_cmake_python_copy_ur3_pick_place.dir/rule: cmake_check_build_system
+CMakeFiles/ament_cmake_python_symlink_ur3_pick_place.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/lachu/ros2_workspaces/build/ur3_pick_place/CMakeFiles 0
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/ament_cmake_python_copy_ur3_pick_place.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/ament_cmake_python_symlink_ur3_pick_place.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/lachu/ros2_workspaces/build/ur3_pick_place/CMakeFiles 0
-.PHONY : CMakeFiles/ament_cmake_python_copy_ur3_pick_place.dir/rule
+.PHONY : CMakeFiles/ament_cmake_python_symlink_ur3_pick_place.dir/rule
 
 # Convenience name for target.
-ament_cmake_python_copy_ur3_pick_place: CMakeFiles/ament_cmake_python_copy_ur3_pick_place.dir/rule
-.PHONY : ament_cmake_python_copy_ur3_pick_place
+ament_cmake_python_symlink_ur3_pick_place: CMakeFiles/ament_cmake_python_symlink_ur3_pick_place.dir/rule
+.PHONY : ament_cmake_python_symlink_ur3_pick_place
 
 # clean rule for target.
-CMakeFiles/ament_cmake_python_copy_ur3_pick_place.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ament_cmake_python_copy_ur3_pick_place.dir/build.make CMakeFiles/ament_cmake_python_copy_ur3_pick_place.dir/clean
-.PHONY : CMakeFiles/ament_cmake_python_copy_ur3_pick_place.dir/clean
+CMakeFiles/ament_cmake_python_symlink_ur3_pick_place.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ament_cmake_python_symlink_ur3_pick_place.dir/build.make CMakeFiles/ament_cmake_python_symlink_ur3_pick_place.dir/clean
+.PHONY : CMakeFiles/ament_cmake_python_symlink_ur3_pick_place.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/ament_cmake_python_build_ur3_pick_place_egg.dir
 
 # All Build rule for target.
-CMakeFiles/ament_cmake_python_build_ur3_pick_place_egg.dir/all: CMakeFiles/ament_cmake_python_copy_ur3_pick_place.dir/all
+CMakeFiles/ament_cmake_python_build_ur3_pick_place_egg.dir/all: CMakeFiles/ament_cmake_python_symlink_ur3_pick_place.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ament_cmake_python_build_ur3_pick_place_egg.dir/build.make CMakeFiles/ament_cmake_python_build_ur3_pick_place_egg.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ament_cmake_python_build_ur3_pick_place_egg.dir/build.make CMakeFiles/ament_cmake_python_build_ur3_pick_place_egg.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/lachu/ros2_workspaces/build/ur3_pick_place/CMakeFiles --progress-num= "Built target ament_cmake_python_build_ur3_pick_place_egg"

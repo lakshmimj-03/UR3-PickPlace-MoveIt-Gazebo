@@ -160,6 +160,18 @@ Visualization Manager:
         Reliability Policy: Reliable
         Value: /ur3_visual_enhancements
       Value: true
+    - Class: rviz_default_plugins/MarkerArray
+      Enabled: true
+      Name: Objects
+      Namespaces:
+        objects: true
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /visualization_marker_array
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 30; 30; 40
@@ -206,22 +218,22 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz_default_plugins/Orbit
-      Distance: 1.0
+      Distance: 1.5
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 0.0
+        X: 0.3
         Y: 0.0
-        Z: 0.5
+        Z: 0.1
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.3
+      Pitch: 0.4
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
       Yaw: 0.785

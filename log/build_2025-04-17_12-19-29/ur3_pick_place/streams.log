@@ -1,0 +1,8 @@
+[0.080s] Invoking command in '/home/lachu/ros2_workspaces/build/ur3_pick_place': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com VIRTUAL_ENV_PROMPT=(.venv) /usr/bin/cmake --build /home/lachu/ros2_workspaces/build/ur3_pick_place -- -j16 -l16
+[0.183s] failed to create symbolic link '/home/lachu/ros2_workspaces/build/ur3_pick_place/ament_cmake_python/ur3_pick_place/ur3_pick_place' because existing path cannot be removed: Is a directory
+[0.183s] gmake[2]: *** [CMakeFiles/ament_cmake_python_symlink_ur3_pick_place.dir/build.make:70: CMakeFiles/ament_cmake_python_symlink_ur3_pick_place] Error 1
+[0.184s] gmake[1]: *** [CMakeFiles/Makefile2:166: CMakeFiles/ament_cmake_python_symlink_ur3_pick_place.dir/all] Error 2
+[0.184s] gmake[1]: *** Waiting for unfinished jobs....
+[0.215s] [100%] Built target pick_place_node
+[0.215s] gmake: *** [Makefile:146: all] Error 2
+[0.218s] Invoked command in '/home/lachu/ros2_workspaces/build/ur3_pick_place' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com VIRTUAL_ENV_PROMPT=(.venv) /usr/bin/cmake --build /home/lachu/ros2_workspaces/build/ur3_pick_place -- -j16 -l16

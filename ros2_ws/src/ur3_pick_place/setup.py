@@ -32,6 +32,11 @@ setup(
             'spawn_objects_node = ur3_pick_place.spawn_objects:main',
             'trajectory_visualizer = ur3_pick_place.scripts.trajectory_visualizer:main',
             'ur3_color_enhancer = ur3_pick_place.scripts.ur3_color_enhancer:main',
+            'visualization_node = ur3_pick_place.visualization_node:main',
+            'visualization_only_node = ur3_pick_place.visualization_only_node:main',
+            'pick_place_demo = ur3_pick_place.pick_place_demo:main',
+            'simple_robot_mover = ur3_pick_place.simple_robot_mover:main',
+            'direct_robot_control = ur3_pick_place.direct_robot_control:main',
         ],
     },
 )

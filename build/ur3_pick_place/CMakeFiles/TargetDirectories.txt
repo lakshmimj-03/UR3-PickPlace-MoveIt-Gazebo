@@ -1,7 +1,7 @@
 /home/lachu/ros2_workspaces/build/ur3_pick_place/CMakeFiles/uninstall.dir
 /home/lachu/ros2_workspaces/build/ur3_pick_place/CMakeFiles/ur3_pick_place_uninstall.dir
 /home/lachu/ros2_workspaces/build/ur3_pick_place/CMakeFiles/pick_place_node.dir
-/home/lachu/ros2_workspaces/build/ur3_pick_place/CMakeFiles/ament_cmake_python_copy_ur3_pick_place.dir
+/home/lachu/ros2_workspaces/build/ur3_pick_place/CMakeFiles/ament_cmake_python_symlink_ur3_pick_place.dir
 /home/lachu/ros2_workspaces/build/ur3_pick_place/CMakeFiles/ament_cmake_python_build_ur3_pick_place_egg.dir
 /home/lachu/ros2_workspaces/build/ur3_pick_place/CMakeFiles/test.dir
 /home/lachu/ros2_workspaces/build/ur3_pick_place/CMakeFiles/edit_cache.dir

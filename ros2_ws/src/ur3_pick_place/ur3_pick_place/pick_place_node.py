@@ -51,12 +51,31 @@ class PickPlaceNode(Node):
     def __init__(self):
         super().__init__('pick_place_node')
 
+        # Set logging level to DEBUG for more information
+        self.get_logger().set_level(rclpy.logging.LoggingSeverity.DEBUG)
+        self.get_logger().debug('Initializing pick_place_node with DEBUG logging')
+
         # Initialize MoveIt
         moveit_commander.roscpp_initialize([])
         self.robot = moveit_commander.RobotCommander()
         self.scene = moveit_commander.PlanningSceneInterface()
+
+        # Print available move groups
+        try:
+            move_groups = self.robot.get_group_names()
+            self.get_logger().info(f'Available move groups: {move_groups}')
+        except Exception as e:
+            self.get_logger().error(f'Error getting move groups: {str(e)}')
+
         self.arm_group = moveit_commander.MoveGroupCommander('ur_manipulator')
         self.gripper_group = moveit_commander.MoveGroupCommander('gripper')
+
+        # Print available named targets
+        try:
+            named_targets = self.arm_group.get_named_targets()
+            self.get_logger().info(f'Available named targets: {named_targets}')
+        except Exception as e:
+            self.get_logger().error(f'Error getting named targets: {str(e)}')
 
         # Set planning parameters
         self.arm_group.set_planning_time(5.0)
@@ -79,25 +98,46 @@ class PickPlaceNode(Node):
         self.tf_buffer = Buffer()
         self.tf_listener = TransformListener(self.tf_buffer, self)
 
-        # Create a timer to start the demo
-        self.timer = self.create_timer(5.0, self.execute_pick_place)
-        self.get_logger().info('Pick and Place Node started')
+        # Check if we're in visualization-only mode
+        self.visualization_only = self.declare_parameter('visualization_only', False).value
 
-        # Object positions
+        if not self.visualization_only:
+            # Create a timer to start the demo
+            self.timer = self.create_timer(5.0, self.execute_pick_place)
+            self.get_logger().info('Pick and Place Node started in full mode')
+        else:
+            self.get_logger().info('Pick and Place Node started in visualization-only mode')
+
+        # Object positions - moved in front of the robot for better visibility
+        # Position objects relative to the base_link frame
         self.red_cube_pose = Pose(
-            position=Point(x=0.5, y=0.1, z=0.435),
+            position=Point(x=0.4, y=0.0, z=0.05),  # Cube on the ground in front of robot
             orientation=Quaternion(x=0.0, y=0.0, z=0.0, w=1.0)
         )
 
         self.blue_cylinder_pose = Pose(
-            position=Point(x=0.5, y=-0.1, z=0.435),
+            position=Point(x=0.4, y=0.2, z=0.05),  # Cylinder on the ground to the right
             orientation=Quaternion(x=0.0, y=0.0, z=0.0, w=1.0)
         )
 
         self.place_pose = Pose(
-            position=Point(x=0.7, y=0.2, z=0.435),
+            position=Point(x=0.4, y=-0.2, z=0.05),  # Place location on the ground to the left
             orientation=Quaternion(x=0.0, y=0.0, z=0.0, w=1.0)
         )
+
+        # Immediately visualize objects
+        self.visualize_objects()
+
+        # Print object positions for debugging
+        self.get_logger().info(f'Red cube position: {self.red_cube_pose.position.x}, {self.red_cube_pose.position.y}, {self.red_cube_pose.position.z}')
+        self.get_logger().info(f'Blue cylinder position: {self.blue_cylinder_pose.position.x}, {self.blue_cylinder_pose.position.y}, {self.blue_cylinder_pose.position.z}')
+        self.get_logger().info(f'Place position: {self.place_pose.position.x}, {self.place_pose.position.y}, {self.place_pose.position.z}')
+
+        # Create a timer to publish markers continuously
+        self.marker_timer = self.create_timer(0.5, self.visualize_objects)
+
+        # Add objects to the MoveIt scene
+        self.add_objects_to_scene()
 
     def execute_pick_place(self):
         self.timer.cancel()  # Run only once
@@ -105,14 +145,37 @@ class PickPlaceNode(Node):
         # Visualize objects
         self.visualize_objects()
 
+        # Wait a moment for everything to initialize
+        self.get_logger().info('Starting pick and place sequence in 3 seconds...')
+        time.sleep(3.0)
+
         # Move to home position
         self.get_logger().info('Moving to home position')
-        self.arm_group.set_named_target('home')
-        success = self.arm_group.go(wait=True)
-        self.arm_group.stop()
+        try:
+            # Try different named targets if 'home' doesn't work
+            if 'home' in self.arm_group.get_named_targets():
+                self.arm_group.set_named_target('home')
+            elif 'ready' in self.arm_group.get_named_targets():
+                self.arm_group.set_named_target('ready')
+            else:
+                # Use a default joint position if no named targets work
+                joint_positions = [0.0, -1.57, 0.0, -1.57, 0.0, 0.0]
+                self.arm_group.set_joint_value_target(joint_positions)
 
-        if not success:
-            self.get_logger().error('Failed to move to home position')
+            # Set planning parameters for better success
+            self.arm_group.set_planning_time(10.0)  # Give more planning time
+            self.arm_group.set_num_planning_attempts(10)
+            self.arm_group.set_max_velocity_scaling_factor(0.3)  # Move slower
+            self.arm_group.set_max_acceleration_scaling_factor(0.3)  # Accelerate slower
+
+            success = self.arm_group.go(wait=True)
+            self.arm_group.stop()
+
+            if not success:
+                self.get_logger().error('Failed to move to home position')
+                return
+        except Exception as e:
+            self.get_logger().error(f'Error moving to home position: {str(e)}')
             return
 
         # Open gripper
@@ -137,9 +200,20 @@ class PickPlaceNode(Node):
 
         # Return to home position
         self.get_logger().info('Moving to home position')
-        self.arm_group.set_named_target('home')
-        success = self.arm_group.go(wait=True)
-        self.arm_group.stop()
+        try:
+            if 'home' in self.arm_group.get_named_targets():
+                self.arm_group.set_named_target('home')
+            elif 'ready' in self.arm_group.get_named_targets():
+                self.arm_group.set_named_target('ready')
+            else:
+                joint_positions = [0.0, -1.57, 0.0, -1.57, 0.0, 0.0]
+                self.arm_group.set_joint_value_target(joint_positions)
+
+            success = self.arm_group.go(wait=True)
+            self.arm_group.stop()
+        except Exception as e:
+            self.get_logger().error(f'Error moving to home position: {str(e)}')
+            return
 
         # Pick blue cylinder
         self.get_logger().info('Picking blue cylinder')
@@ -153,7 +227,7 @@ class PickPlaceNode(Node):
         place_pose_cylinder = Pose()
         place_pose_cylinder.position.x = self.place_pose.position.x - 0.05
         place_pose_cylinder.position.y = self.place_pose.position.y
-        place_pose_cylinder.position.z = self.place_pose.position.z + 0.04  # Place on top of the cube
+        place_pose_cylinder.position.z = self.place_pose.position.z + 0.08  # Place on top of the cube
         place_pose_cylinder.orientation = self.place_pose.orientation
 
         self.get_logger().info('Placing blue cylinder')
@@ -165,9 +239,20 @@ class PickPlaceNode(Node):
 
         # Return to home position
         self.get_logger().info('Moving to home position')
-        self.arm_group.set_named_target('home')
-        success = self.arm_group.go(wait=True)
-        self.arm_group.stop()
+        try:
+            if 'home' in self.arm_group.get_named_targets():
+                self.arm_group.set_named_target('home')
+            elif 'ready' in self.arm_group.get_named_targets():
+                self.arm_group.set_named_target('ready')
+            else:
+                joint_positions = [0.0, -1.57, 0.0, -1.57, 0.0, 0.0]
+                self.arm_group.set_joint_value_target(joint_positions)
+
+            success = self.arm_group.go(wait=True)
+            self.arm_group.stop()
+        except Exception as e:
+            self.get_logger().error(f'Error moving to home position: {str(e)}')
+            return
 
         self.get_logger().info('Pick and place demo completed')
 
@@ -346,55 +431,206 @@ class PickPlaceNode(Node):
 
         self.gripper_pub.publish(msg)
 
+    def add_objects_to_scene(self):
+        """Add objects to the MoveIt planning scene"""
+        # In visualization-only mode, we don't need to add objects to the MoveIt scene
+        if self.visualization_only:
+            self.get_logger().info('Skipping adding objects to MoveIt scene in visualization-only mode')
+            return
+
+        # Wait a moment for the planning scene to be ready
+        self.get_logger().info('Waiting for planning scene to be ready...')
+        time.sleep(2.0)
+
+        # Clear existing objects
+        self.scene.clear()
+        self.get_logger().info('Cleared planning scene')
+
+        # Add ground plane
+        self.scene.add_plane(
+            "ground",
+            Pose(
+                position=Point(x=0.0, y=0.0, z=0.0),
+                orientation=Quaternion(x=0.0, y=0.0, z=0.0, w=1.0)
+            ),
+            frame_id='base_link'  # Use base_link frame
+        )
+        self.get_logger().info('Added ground plane')
+
+        # Add red cube - larger for better visibility and grasping
+        self.scene.add_box(
+            "red_cube",
+            self.red_cube_pose,
+            size=[0.08, 0.08, 0.08],
+            frame_id='base_link'
+        )
+        self.get_logger().info('Added red cube')
+
+        # Add blue cylinder - larger for better visibility
+        self.scene.add_cylinder(
+            "blue_cylinder",
+            self.blue_cylinder_pose,
+            height=0.08,
+            radius=0.04,
+            frame_id='base_link'
+        )
+        self.get_logger().info('Added blue cylinder')
+
+        # Add place location (as a flat box)
+        self.scene.add_box(
+            "place_location",
+            self.place_pose,
+            size=[0.15, 0.15, 0.01],
+            frame_id='base_link'
+        )
+        self.get_logger().info('Added place location')
+
+        # Wait for the scene to update
+        self.get_logger().info('Waiting for planning scene to update...')
+        time.sleep(1.0)
+
+        self.get_logger().info('Added all objects to planning scene')
+
     def visualize_objects(self):
+        self.get_logger().info('Visualizing objects')
         marker_array = MarkerArray()
+
+        # Get current time for all markers
+        now = self.get_clock().now().to_msg()
+
+        # Create a text marker to show the frame
+        text_marker = Marker()
+        text_marker.header.frame_id = 'base_link'
+        text_marker.header.stamp = now
+        text_marker.ns = 'objects'
+        text_marker.id = 0
+        text_marker.type = Marker.TEXT_VIEW_FACING
+        text_marker.action = Marker.ADD
+        text_marker.pose.position.x = 0.0
+        text_marker.pose.position.y = 0.0
+        text_marker.pose.position.z = 0.3
+        text_marker.pose.orientation.w = 1.0
+        text_marker.scale.z = 0.05  # Text height
+        text_marker.color = ColorRGBA(r=1.0, g=1.0, b=1.0, a=1.0)  # White
+        text_marker.text = "UR3 Pick and Place Demo"
+        marker_array.markers.append(text_marker)
 
         # Red cube marker
         red_cube_marker = Marker()
-        red_cube_marker.header.frame_id = 'world'
-        red_cube_marker.header.stamp = self.get_clock().now().to_msg()
+        red_cube_marker.header.frame_id = 'base_link'
+        red_cube_marker.header.stamp = now
         red_cube_marker.ns = 'objects'
         red_cube_marker.id = 1
         red_cube_marker.type = Marker.CUBE
         red_cube_marker.action = Marker.ADD
         red_cube_marker.pose = self.red_cube_pose
-        red_cube_marker.scale.x = 0.035
-        red_cube_marker.scale.y = 0.035
-        red_cube_marker.scale.z = 0.035
-        red_cube_marker.color = ColorRGBA(r=1.0, g=0.0, b=0.0, a=0.7)
+        red_cube_marker.scale.x = 0.1  # Larger for better visibility
+        red_cube_marker.scale.y = 0.1
+        red_cube_marker.scale.z = 0.1
+        red_cube_marker.color = ColorRGBA(r=1.0, g=0.0, b=0.0, a=1.0)  # Fully opaque
         marker_array.markers.append(red_cube_marker)
+
+        # Red cube text label
+        red_text = Marker()
+        red_text.header.frame_id = 'base_link'
+        red_text.header.stamp = now
+        red_text.ns = 'objects'
+        red_text.id = 5
+        red_text.type = Marker.TEXT_VIEW_FACING
+        red_text.action = Marker.ADD
+        red_text.pose.position.x = self.red_cube_pose.position.x
+        red_text.pose.position.y = self.red_cube_pose.position.y
+        red_text.pose.position.z = self.red_cube_pose.position.z + 0.1
+        red_text.pose.orientation.w = 1.0
+        red_text.scale.z = 0.04  # Text height
+        red_text.color = ColorRGBA(r=1.0, g=1.0, b=1.0, a=1.0)  # White
+        red_text.text = "Red Cube"
+        marker_array.markers.append(red_text)
 
         # Blue cylinder marker
         blue_cylinder_marker = Marker()
-        blue_cylinder_marker.header.frame_id = 'world'
-        blue_cylinder_marker.header.stamp = self.get_clock().now().to_msg()
+        blue_cylinder_marker.header.frame_id = 'base_link'
+        blue_cylinder_marker.header.stamp = now
         blue_cylinder_marker.ns = 'objects'
         blue_cylinder_marker.id = 2
         blue_cylinder_marker.type = Marker.CYLINDER
         blue_cylinder_marker.action = Marker.ADD
         blue_cylinder_marker.pose = self.blue_cylinder_pose
-        blue_cylinder_marker.scale.x = 0.035
-        blue_cylinder_marker.scale.y = 0.035
-        blue_cylinder_marker.scale.z = 0.035
-        blue_cylinder_marker.color = ColorRGBA(r=0.0, g=0.0, b=1.0, a=0.7)
+        blue_cylinder_marker.scale.x = 0.1
+        blue_cylinder_marker.scale.y = 0.1
+        blue_cylinder_marker.scale.z = 0.1
+        blue_cylinder_marker.color = ColorRGBA(r=0.0, g=0.0, b=1.0, a=1.0)  # Fully opaque
         marker_array.markers.append(blue_cylinder_marker)
+
+        # Blue cylinder text label
+        blue_text = Marker()
+        blue_text.header.frame_id = 'base_link'
+        blue_text.header.stamp = now
+        blue_text.ns = 'objects'
+        blue_text.id = 6
+        blue_text.type = Marker.TEXT_VIEW_FACING
+        blue_text.action = Marker.ADD
+        blue_text.pose.position.x = self.blue_cylinder_pose.position.x
+        blue_text.pose.position.y = self.blue_cylinder_pose.position.y
+        blue_text.pose.position.z = self.blue_cylinder_pose.position.z + 0.1
+        blue_text.pose.orientation.w = 1.0
+        blue_text.scale.z = 0.04  # Text height
+        blue_text.color = ColorRGBA(r=1.0, g=1.0, b=1.0, a=1.0)  # White
+        blue_text.text = "Blue Cylinder"
+        marker_array.markers.append(blue_text)
 
         # Place location marker
         place_marker = Marker()
-        place_marker.header.frame_id = 'world'
-        place_marker.header.stamp = self.get_clock().now().to_msg()
+        place_marker.header.frame_id = 'base_link'
+        place_marker.header.stamp = now
         place_marker.ns = 'objects'
         place_marker.id = 3
         place_marker.type = Marker.CUBE
         place_marker.action = Marker.ADD
         place_marker.pose = self.place_pose
-        place_marker.scale.x = 0.1
-        place_marker.scale.y = 0.1
-        place_marker.scale.z = 0.01
-        place_marker.color = ColorRGBA(r=0.0, g=1.0, b=0.0, a=0.5)
+        place_marker.scale.x = 0.2
+        place_marker.scale.y = 0.2
+        place_marker.scale.z = 0.02
+        place_marker.color = ColorRGBA(r=0.0, g=1.0, b=0.0, a=1.0)  # Fully opaque
         marker_array.markers.append(place_marker)
 
+        # Place location text label
+        place_text = Marker()
+        place_text.header.frame_id = 'base_link'
+        place_text.header.stamp = now
+        place_text.ns = 'objects'
+        place_text.id = 7
+        place_text.type = Marker.TEXT_VIEW_FACING
+        place_text.action = Marker.ADD
+        place_text.pose.position.x = self.place_pose.position.x
+        place_text.pose.position.y = self.place_pose.position.y
+        place_text.pose.position.z = self.place_pose.position.z + 0.05
+        place_text.pose.orientation.w = 1.0
+        place_text.scale.z = 0.04  # Text height
+        place_text.color = ColorRGBA(r=1.0, g=1.0, b=1.0, a=1.0)  # White
+        place_text.text = "Place Location"
+        marker_array.markers.append(place_text)
+
+        # Ground plane marker for better visibility
+        ground_marker = Marker()
+        ground_marker.header.frame_id = 'base_link'
+        ground_marker.header.stamp = now
+        ground_marker.ns = 'objects'
+        ground_marker.id = 4
+        ground_marker.type = Marker.CUBE
+        ground_marker.action = Marker.ADD
+        ground_marker.pose.position.x = 0.0
+        ground_marker.pose.position.y = 0.0
+        ground_marker.pose.position.z = -0.01  # Just below the ground
+        ground_marker.pose.orientation.w = 1.0
+        ground_marker.scale.x = 2.0
+        ground_marker.scale.y = 2.0
+        ground_marker.scale.z = 0.01
+        ground_marker.color = ColorRGBA(r=0.8, g=0.8, b=0.8, a=0.5)  # Light gray, more visible
+        marker_array.markers.append(ground_marker)
+
         self.marker_pub.publish(marker_array)
+        self.get_logger().info('Published visualization markers')
 
 def main():
     rclpy.init()

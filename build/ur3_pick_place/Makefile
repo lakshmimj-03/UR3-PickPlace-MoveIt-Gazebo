@@ -211,17 +211,17 @@ pick_place_node/fast:
 .PHONY : pick_place_node/fast
 
 #=============================================================================
-# Target rules for targets named ament_cmake_python_copy_ur3_pick_place
+# Target rules for targets named ament_cmake_python_symlink_ur3_pick_place
 
 # Build rule for target.
-ament_cmake_python_copy_ur3_pick_place: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ament_cmake_python_copy_ur3_pick_place
-.PHONY : ament_cmake_python_copy_ur3_pick_place
+ament_cmake_python_symlink_ur3_pick_place: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ament_cmake_python_symlink_ur3_pick_place
+.PHONY : ament_cmake_python_symlink_ur3_pick_place
 
 # fast build rule for target.
-ament_cmake_python_copy_ur3_pick_place/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ament_cmake_python_copy_ur3_pick_place.dir/build.make CMakeFiles/ament_cmake_python_copy_ur3_pick_place.dir/build
-.PHONY : ament_cmake_python_copy_ur3_pick_place/fast
+ament_cmake_python_symlink_ur3_pick_place/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ament_cmake_python_symlink_ur3_pick_place.dir/build.make CMakeFiles/ament_cmake_python_symlink_ur3_pick_place.dir/build
+.PHONY : ament_cmake_python_symlink_ur3_pick_place/fast
 
 #=============================================================================
 # Target rules for targets named ament_cmake_python_build_ur3_pick_place_egg
@@ -274,7 +274,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... test"
 	@echo "... ament_cmake_python_build_ur3_pick_place_egg"
-	@echo "... ament_cmake_python_copy_ur3_pick_place"
+	@echo "... ament_cmake_python_symlink_ur3_pick_place"
 	@echo "... uninstall"
 	@echo "... ur3_pick_place_uninstall"
 	@echo "... pick_place_node"
